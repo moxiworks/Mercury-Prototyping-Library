@@ -1,0 +1,91 @@
+@import '../../css/global.scss';
+.button{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    border-radius: 3px;
+    border: none;
+    min-width: 150px;
+    height: 40px;
+    background-color: $primary-color;
+    color: white;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all $speed-normal;
+    overflow: hidden;
+}
+.button:disabled{
+    background-color: $secondary-light-color;
+    color: $secondary-color;
+}
+.buttonSmall{
+    height: 30px;
+    min-width: 100px;
+    background-color: $purple-color;
+}
+.buttonText{
+background: none;
+color: $dark-color;
+font-weight: 700;
+}
+.buttonText:hover{
+    color: $primary-color;
+    filter: none !important;
+}
+.buttonSearch{
+    position: relative;
+    padding-left: 20px !important;
+    pointer-events: none;
+    background-color: $secondary-light-color;
+    cursor: pointer;
+}
+.buttonDelete{
+    background-color: $error-color;
+}
+// .buttonSearch:after{
+//     position: absolute;
+//     content: '';
+//     left: 5px;
+//     width: 16px;
+//     height: 16px;
+//     background-image: url('../../images/small-loader.svg');
+//     background-repeat: no-repeat;
+//     background-position: center;
+//     background-size: 10px;
+//     animation: spinner $speed-quick linear infinite;
+// }
+.button:hover:enabled{
+    filter: brightness(1.4);
+}
+.buttonActive:before{
+    position: absolute;
+    content: " ";
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 50%;
+    opacity: 0.2;
+    background-color: white;
+    animation: scaleOut $speed-quick forwards;
+    filter: brightness(0.75);
+}
+
+@keyframes scaleOut {
+    0%{
+        opacity: 0;
+        transform: scale(0);
+    }
+    50%{
+        opacity: 0.25;
+    }
+    100%{
+        opacity: 0;
+        transform: scale(3);
+    }
+    
+}

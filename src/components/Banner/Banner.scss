@@ -1,0 +1,56 @@
+@import '../../css/global.scss';
+
+.bannerAlert{
+    position: absolute;
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    align-items: center;
+    top: 30px;
+    left: calc(50% - 150px);
+    width: 500px;
+    height: 60px;
+    background-color: $purple-color;
+    border-radius: 30px;
+    box-shadow: $shadow;
+    transform: translateY(-100px);
+    cursor: pointer;
+    transition: filter $speed-normal;
+}
+.bannerAlert:hover{
+    filter: brightness(1.2);
+}
+.slideUp{
+    animation: slideUp $speed-normal $ease-bounce;
+}
+.slideDown{
+    animation: slideDown $speed-normal $ease-bounce forwards;
+}
+.bannerIcon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    margin-left: 10px;
+}
+.bannerContent{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 0 30px 0 20px;
+    .rhs{
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        img{
+            margin-left: 20px;
+           
+        }
+    }
+}
+

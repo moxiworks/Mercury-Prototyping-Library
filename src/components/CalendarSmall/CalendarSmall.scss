@@ -1,0 +1,163 @@
+@import '../../css/global.scss';
+.modalInner{
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+    height: 120px;
+    
+    .selectWrap{
+        margin-bottom: 0 !important;
+        input{
+            // width: 150px;
+        }
+    }
+}
+
+.calWrap{
+    position: relative;
+    width: 320px;
+    height: 320px;
+    border: 1px solid $secondary-light-color;
+    border-radius: $radius-small;
+    box-shadow: $shadow;
+    overflow: hidden;
+    cursor: pointer;
+}
+.calHeader{
+    position: relative;
+    z-index: 60;
+    height: 40px;
+    background-color: $secondary-ultra-light-color;
+    color: $secondary-color;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+}
+.calArrow{
+    height: 100%;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    svg{
+        fill: currentColor;
+    }
+}
+
+.calMain{
+    display: grid;
+    grid-template-columns: 320px 320px;
+    transform: translateX(0px);
+    transition: all $speed-slow $ease-bounce;
+}
+.calMonthMainActive{
+    transform: translateX(-320px);
+}
+.calMonth{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    color: $secondary-color;
+    font-size: 12px;
+    font-weight: 700;
+    height: 40px;
+    padding: 0 10px;
+    .calDays{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+
+    }
+}
+
+.calDaysNumber{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+  
+    .calDay{
+        position: relative;
+        height: 47px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $secondary-color;
+        font-size: 12px;
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+    .calOffDay{
+        color: #CED8DC;
+    }
+
+    .calToday{
+        position: relative;
+        font-weight: 700;
+        color: white;
+    }
+    .calCurrent{
+        position: relative;
+        font-weight: 700;
+    }
+
+    .calCurrent:before{
+        position: absolute;
+        z-index: -1;
+        content: '';
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: $secondary-light-color;
+    }
+    .calToday::before{
+        position: absolute;
+        z-index: -1;
+        content: '';
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: $purple-color;
+        animation: scaleIn $speed-normal $ease-bounce;
+    }
+    .calToday::after{
+        position: absolute;
+        // z-index: -1;
+        content: '';
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 1px solid $purple-color;
+        background-color: transparent;
+        animation: scaleOutCheckbox $speed-normal forwards;
+    }
+}
+
+.event{
+    position: absolute;
+    z-index: 50;
+    width: 40px;
+    height: 40px;
+    pointer-events: none;
+}
+.event:after{
+    position: absolute;
+    content: '';
+    top: 32px;
+    left: 18px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    outline: 1px solid white;
+    background-color: $secondary-color;
+    animation: scaleIn $speed-normal $ease-bounce;
+}

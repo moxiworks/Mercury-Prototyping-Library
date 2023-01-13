@@ -1,0 +1,61 @@
+@import '../../css/global.scss';
+
+.modalWrapper{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,32,64,0.6);
+    animation: fadeIn $speed-normal;
+}
+
+.dialogBack{
+    position: relative;
+    width: 400px;
+    min-height: 80px;
+    border-radius: $radius-small;
+    background-color: white;
+    box-shadow: $shadow-blur;
+    padding: 40px;
+    padding-bottom: 100px;
+    animation: slideUpModal $speed-normal $ease-bounce forwards;
+}
+.alertHeading{
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.alertText{
+    font-size: 14px;
+    color: $secondary-color;
+    line-height: 24px;
+}
+
+// .modalContent{
+//     position: relative;
+//     max-width: 700px;
+//     width: 700px;
+//     // height: 250px;
+    // border-radius: $radius-small;
+    // background-color: white;
+    // box-shadow: $shadow-blur;
+    // padding: 40px;
+    // padding-bottom: 100px;
+    // animation: slideUpModal $speed-normal forwards;
+// }
+
+// .modalText{
+//     margin-top: 20px;
+    // font-size: 14px;
+    // color: $secondary-color;
+    // line-height: 24px;
+// }
+// .modalButtons{
+//     position: absolute;
+//     right: 40px;
+//     bottom: 20px;
+// }

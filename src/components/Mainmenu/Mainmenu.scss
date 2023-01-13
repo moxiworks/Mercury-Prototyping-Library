@@ -1,0 +1,112 @@
+@import '../../css/global.scss';
+
+.mainMenuBack{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 0 20px;
+    height: 60px;
+    width: 660px;
+    background-color: $primary-color;
+    border-radius: $radius-small;
+    overflow: hidden;
+}
+
+.inlineSearch{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    .searchIcon{
+        position: absolute;
+        height: 100%;
+        width: 60px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       
+    }
+    form{
+        height: 100%;
+    }
+    input{
+        height: calc(100% - 0px);
+        width: 0px;
+        padding: 0;
+        padding-left: 60px;
+        margin: 0;
+        color: $secondary-color;
+        border: none;
+        outline: none;
+        background-color: $primary-color;
+        transition: all $speed-quick ease-in-out;
+    }
+    input::placeholder{
+        color: #768EAF;
+        opacity: 0.6;
+    }
+}
+.inputOpen{
+    padding-left: 50px !important;
+    width: 200px !important;
+    background-color: white !important;
+}
+.loaderIconSearch{
+    width: 14px;
+    animation: spinner $speed-quick linear infinite;
+}
+.mainNavLeft{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-right: 20px;
+}
+.mainNavRight{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0px;
+}
+.mainMenuItem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $light-blue;
+    height: 100%;
+    width: auto;
+    cursor: pointer;
+    transition: all $speed-normal;
+}
+.mainMenuItem:hover{
+    color: white;
+}
+.mainMenuItemActive{
+    position: relative;
+    color: white;
+    height: 100%;
+   
+}
+
+.mainMenuActiveBar{
+    position: absolute;
+    bottom: 0px;
+    // left: 500px;
+    width: 90px;
+    height: 3px;
+    background-color: white;
+    transition: all $speed-normal $ease-bounce;
+}
+
+@keyframes showSubmenu {
+    0%{
+        height: 0px
+    }
+    100%{
+        height: 3px
+    }
+}

@@ -1,0 +1,63 @@
+@import '../../css/global.scss';
+
+.dotReal{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: $light-blue;
+    border: 3px solid white;
+    border-radius: 50%;
+    animation: showDots $speed-normal $ease-bounce forwards;
+    transition: all $speed-normal ease-in-out;
+}
+.dotReal:hover{
+    background-color: $purple-color;
+    transform: scale(1.4) !important;
+}
+#myCanvas{
+    position: absolute;
+    background-color: red;
+    width: 100%;
+    height: 100%;
+}
+.dotmask{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    // overflow: hidden;
+    background-color: red;
+}
+.dotHolder{
+    position: relative;
+    border-bottom: 1px solid $secondary-light-color;
+    border-left: 1px solid $secondary-light-color;
+    width: 100%;
+    height: 100%;
+    // overflow: hidden;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 10px;
+    padding-left: 10px;
+    align-items: flex-end;
+   
+    .date{
+        position: absolute;
+        z-index: 5;
+        bottom: -30px;
+        font-size: 12px;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: $secondary-color;
+        text-align: center;
+    }
+}
+@keyframes showDots {
+    0%{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}

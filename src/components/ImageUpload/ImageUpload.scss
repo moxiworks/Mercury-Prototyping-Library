@@ -1,0 +1,148 @@
+@import '../../css/global.scss';
+
+.imageUpload{
+    position: relative;
+    width: 300px;
+    height: 240px;
+    background-color:$secondary-ultra-light-color;
+    transition: border $speed-normal;
+    border-radius: $radius-small;
+    border: 1px solid $secondary-light-color;
+    cursor: pointer;
+    box-shadow: $shadow;
+    transition: all $speed-normal;
+}
+.imageUpload:hover, .imageUploadOver{
+    border: 1px double $purple-color;
+    box-shadow: $shadow-large;
+    transform: translateY(-4px);
+    .iconArea{
+        background-color: $purple-color;
+        img{
+            transform: rotate(180deg);
+            // width: 30px;
+            animation: bounce $speed-normal ease-in-out;
+            // animation-direction: alternate;
+            animation-iteration-count: 2;
+        }
+    }
+}
+.fileUpload{
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.uploadContent{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.title{
+    color: $secondary-color;
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+    transition: color $speed-normal;
+}
+.subtext{
+    color: $secondary-color;
+    font-size: 14px;
+    transition: color $speed-normal;
+}
+.iconArea{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background-color: $dark-color;
+    border-radius: 50%;
+    border: 4px solid white;
+    margin-bottom: 20px;
+    transition: all $speed-normal;
+    overflow: hidden;
+    img{
+        transform: rotate(180deg);
+        transition: all $speed-normal;
+        width: 32px;
+    }
+}
+.previewImage{
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: white;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        animation: fadeIn $speed-slow;
+        background-image: url('../../images/image-trans.svg');
+        // opacity: 0.5;
+    }
+}
+.previewImageHide{
+    display: none;
+}
+.uploadProgress{
+    position: absolute;
+    z-index: 3;
+    bottom:10px;
+    background-color: white;
+    width: calc(100% - 20px);
+    margin: 0 10px;
+    height: 40px;
+    border-radius: 20px;
+    animation: progressAppear $speed-slow $ease-bounce;
+    border: 1px solid $secondary-light-color;
+    box-shadow: rgba(0,76,150,0.25) 0 0 10px;
+    // border-top: 1px solid $secondary-color;
+    .uploadInner{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        .progressBar{
+            position: relative;
+            width: 220px;
+            height: 5px;
+            margin-right: 10px;
+            background-color: $secondary-light-color;
+            border-radius: $radius-small;
+            .progressBarAmount{
+                position: absolute;
+                width: 10%;
+                height: 5px;
+                background-color: $purple-color;
+                border-radius: $radius-small;
+                transition: width $speed-quick;
+            }
+        }
+        .progressText{
+            font-size: 12px;
+            font-weight: 700;
+            color: $secondary-color;
+            width: 30px;
+        }
+    }
+}
+
+.hideProgress{
+    animation: progressHide $speed-normal $ease-bounce forwards;
+    animation-delay: 0.5s;
+}
+

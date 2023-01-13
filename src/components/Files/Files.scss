@@ -1,0 +1,91 @@
+@import '../../css/global.scss';
+
+.fileWrapper{
+    position: absolute;
+
+    top: 80px;
+    height: 120px;
+    // max-height: 1000px;
+    // transition: all $speed-normal;
+    // border: 1px solid red;
+    // overflow: hidden;
+}
+.fileWrapperOpen{
+    height: 180px;
+}
+.tableRow{
+    position: relative;
+    z-index: 20;
+    min-width: 500px;
+    height: 60px;
+    border: 1px solid $secondary-light-color;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    margin-top: -1px;
+    cursor: pointer;
+}
+.secondRow{
+    position: relative;
+    z-index: 18;
+    transform: translateY(-50px);
+    // animation: openFolder $speed-normal;
+    // animation: slideDown $speed-normal;
+    .arrowIcon{
+        width: 60px;
+        height: 100%;
+        background-color: $secondary-ultra-light-color;
+        background-image: url('../../images/arrow-elbow.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+.openRow{
+    transform: translateY(0px);
+    // transition: transform $speed-normal;
+}
+
+@keyframes openFolder {
+    0%{
+        transform: translateY(-50px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+.folderIcon{
+    position: relative;
+    top: -10px;
+    left: 20px;
+    img{
+        position: absolute;
+    }
+}
+.fileIcon{
+padding-left: 20px;
+}
+.fileCover{
+    position: absolute;
+    width: 20px;
+    height: 12px;
+    top: 5px;
+    left: 1px;
+    background-color: $primary-color;
+    transform-origin: center bottom;
+    transform: none;
+    transition: transform $speed-quick $ease-bounce;
+    border-radius: 1px;
+}
+.fileOpen{
+    transform: skew(-30deg) scaleY(0.85);
+}
+.textNameFile{
+    padding-left: 20px;
+    font-size: 14px;
+    color: $secondary-color;
+}
+.textName{
+    padding-left: 60px;
+    font-size: 14px;
+    color: $secondary-color;
+}

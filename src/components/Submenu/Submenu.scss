@@ -1,0 +1,63 @@
+@import '../../css/global.scss';
+
+.subMenuBack{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px;
+    height: 60px;
+    background-color: $secondary-ultra-light-color;
+    border-radius: $radius-small;
+    overflow: hidden;
+}
+
+.subMenuItem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $secondary-color;
+    height: 100%;
+    width: auto;
+    cursor: pointer;
+    transition: all $speed-normal;
+}
+.subMenuItem:hover{
+    color: $primary-color;
+}
+.subMenuItemActive{
+    position: relative;
+    color: $primary-color;
+    height: 100%;
+   
+}
+// .subMenuItemActive:after{
+//    position: absolute;
+//    content: '';
+//    bottom: 0;
+//    height: 3px;
+//    width: 100%;
+//    background-color: $primary-color;
+//    animation: showSubmenu $speed-normal $ease-bounce forwards;
+// }
+.subMenuActiveBar{
+    position: absolute;
+    bottom: 0px;
+    // left: 500px;
+    width: 90px;
+    height: 3px;
+    background-color: $primary-color;
+    transition: all $speed-normal $ease-bounce;
+}
+
+@keyframes showSubmenu {
+    0%{
+        height: 0px
+    }
+    100%{
+        height: 3px
+    }
+}

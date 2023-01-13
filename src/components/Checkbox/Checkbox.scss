@@ -1,0 +1,48 @@
+@import '../../css/global.scss';
+
+.checkboxWrap{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    cursor: pointer;
+
+    .checkboxMain{
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        border: 1px solid $secondary-color;
+        border-radius: $radius-small;
+        transition: all $speed-quick;
+    }
+    .checkboxChecked{
+        position: relative;
+        background-color: $primary-color;
+        border: 1px solid $primary-color;
+    }
+    .checkboxChecked::after{
+        position: absolute;
+        content: '';
+        left: 6px;
+        top: 7px;
+        width: 8px;
+        height: 8px;
+        opacity: 0;
+        transform: scale(0);
+        background-image: url('../../images/tick.svg');
+        background-repeat: no-repeat;
+        animation: scaleIn $speed-normal $ease-bounce forwards;
+    }
+    .checkboxChecked::before{
+        position: absolute;
+        content: '';
+        left: -1px;
+        top: -1px;
+        width: 20px;
+        height: 20px;
+        opacity: 0;
+        transform: scale(0);
+        border: 1px solid $primary-color;
+        border-radius: $radius-small;
+        animation: scaleOutCheckbox $speed-normal forwards;
+    }
+}
