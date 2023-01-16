@@ -1,17 +1,5 @@
 @import '../../css/global.scss';
-.modalInner{
-    display: flex;
-    flex-direction: column;
-    background-color: red;
-    height: 120px;
-    
-    .selectWrap{
-        margin-bottom: 0 !important;
-        input{
-            // width: 150px;
-        }
-    }
-}
+
 
 .calWrap{
     position: relative;
@@ -52,7 +40,7 @@
     display: grid;
     grid-template-columns: 320px 320px;
     transform: translateX(0px);
-    transition: all $speed-slow $ease-bounce;
+    transition: all 0.4s ease-in-out;
 }
 .calMonthMainActive{
     transform: translateX(-320px);

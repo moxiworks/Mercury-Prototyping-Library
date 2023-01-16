@@ -62,11 +62,7 @@ class CalendarSmall extends Component {
                         <div className='calArrow' onClick={()=>this.forward()}> <img src={RightArrow} alt="" tilte="Septmember"/> </div>
                     </div>
 
-                   
-
-                <div className={this.state.hide ? 'calMain calMonthMainActive': 'calMain'}>
-                    <div className='calMonthWrap'>
-                            <div className='calMonth'>
+                    <div className='calMonth'>
                                     <div className='calDays'>MON</div>
                                     <div className='calDays'>TUE</div>
                                     <div className='calDays'>WED</div>
@@ -75,6 +71,10 @@ class CalendarSmall extends Component {
                                     <div className='calDays'>SAT</div>
                                     <div className='calDays'>SUN</div>
                             </div>
+
+                <div className={this.state.hide ? 'calMain calMonthMainActive': 'calMain'}>
+                    <div className='calMonthWrap'>
+                        
 
                             <div className='calDaysNumber'>
                             <div className='calDay calOffDay'>30</div>
@@ -116,7 +116,7 @@ class CalendarSmall extends Component {
                     </div>
 
                     <div className='calMonthWrap'>
-                            <div className='calMonth'>
+                            {/* <div className='calMonth'>
                                     <div className='calDays'>MON</div>
                                     <div className='calDays'>TUE</div>
                                     <div className='calDays'>WED</div>
@@ -124,7 +124,7 @@ class CalendarSmall extends Component {
                                     <div className='calDays'>FRI</div>
                                     <div className='calDays'>SAT</div>
                                     <div className='calDays'>SUN</div>
-                            </div>
+                            </div> */}
 
                             <div className='calDaysNumber'>
                                 <div className='calDay calOffDay'>30</div>
