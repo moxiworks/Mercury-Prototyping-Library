@@ -70,6 +70,8 @@ export default class Input extends Component {
                     onBlur={()=>this.focusInput()} 
                     onChange={(e)=>this.changeText(e)}
                     autoFocus={this.props.focus}
+                    type={this.props.type? this.props.type : 'text'}
+                    max={this.props.max?this.props.max:800000000}
                 />
                 {this.state.showCross ? 
                 <div className="clearButton" onClick={()=>this.clearText()}><img src={Cross}/></div>

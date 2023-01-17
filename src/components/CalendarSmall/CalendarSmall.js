@@ -2,18 +2,76 @@ import React, { Component } from 'react';
 import './CalendarSmall.scss'
 import LeftArrow  from '../../images/left-arrow.svg'
 import RightArrow  from '../../images/right-arrow.svg'
-// import { ReactComponent as RightArrow } from '../../images/right-arrow.svg'
-// import { ReactComponent as LeftArrow } from '../../images/left-arrow.svg'
+import Select from '../Select/Select'
+import Input from '../Input/Input';
+import CloseButton from '../CloseButton/CloseButton';
+import Button from '../Button/Button';
 
 class CalendarSmall extends Component {
     constructor(props) {
         super(props);
        this.todayFunc = this.todayFunc.bind(this);
+       this.wrapperRef = React.createRef();
+       this.handleClickOutside = this.handleClickOutside.bind(this);
     }
     state = { 
         month:'',
         hide: false,
-        today: 'August 2023'
+        month: 'August',
+        year: '2023',
+        showModal:false,
+        tempMonth: 'August',
+        tempYear: '2023',
+        months:[
+            {
+                title: "January",
+                value: "January"
+            },
+            {
+                title: "February",
+                value: "February"
+            },
+            {
+                title: "March",
+                value: "March"
+            },
+            {
+                title: "April",
+                value: "April"
+            },
+            {
+                title: "May",
+                value: "May"
+            },
+            {
+                title: "June",
+                value: "June"
+            },
+            {
+                title: "July",
+                value: "July"
+            },
+            {
+                title: "August",
+                value: "August"
+            },
+            {
+                title: "September",
+                value: "September"
+            },
+            {
+                title: "October",
+                value: "October"
+            },
+            {
+                title: "November",
+                value: "November"
+            },
+            {
+                title: "December",
+                value: "December"
+            }
+        ]
      }
 
     componentDidMount(){
@@ -21,7 +79,13 @@ class CalendarSmall extends Component {
         Array.from(elements).forEach((element)=>{
             element.addEventListener('click', this.todayFunc);
         });
+        document.addEventListener("mousedown", this.handleClickOutside);
     }
+    handleClickOutside(event) {
+        if (this.wrapperRef && this.wrapperRef.current && ! this.wrapperRef.current.contains(event.target)) {
+          this.hideModal()
+        }
+      }
 
     todayFunc(e){
         let elements = document.getElementsByClassName("calToday");
@@ -34,31 +98,75 @@ class CalendarSmall extends Component {
     forward=()=>{
             this.setState({
                 hide: true,
-                today: 'September 2023'
+                month: 'September',
+                year: '2023'
             })
     }
     goback=()=>{
         this.setState({
             hide: false,
-            today: 'August 2023'
-            
+            month: 'August',
+            year: '2023',
+        })
+    }
+
+    showModal=()=>{
+        this.setState({
+            showModal: true
+        })
+    }
+
+    hideModal=()=>{
+        this.setState({
+            showModal: false,
+            tempMonth: this.state.month,
+            tempYear: this.state.year
+        })
+    }
+
+    setDate=()=>{
+        this.setState({
+            showModal: false,
+            month: this.state.tempMonth,
+            year: this.state.tempYear
+        })
+    
+    }
+
+    changeMonth=(text)=>{
+        this.setState({
+            tempMonth: text
+        })
+    }
+    changeYear=(text)=>{
+        this.setState({
+            tempYear: text
         })
     }
 
     render() { 
         return ( 
             <div>
-                {/* <div className='modalWrapper'>
-                    <div className='modalInner'>
-                    <Select text="August" label="Month"/>
-                    <Input text="2023" label="Year"/>
+                {this.state.showModal ? 
+                <div className='modalWrapper'>
+                    <div className='modalInner' ref={this.wrapperRef}>
+                        <CloseButton type="internal" onClick={()=>this.hideModal()}/>
+                    <h1>Choose Date</h1>
+                    <Select text={this.state.tempMonth} label="Month" listItems={this.state.months} callback={(text)=>this.changeMonth(text)}/>
+                    <Input text={this.state.tempYear} label="Year" onChange={(text)=>this.changeYear(text)}/>
+                    <div className='modalButtons'>
+                                <Button text="Cancel" onClick={()=>this.hideModal()} type="text"/>
+                                <Button text="Ok" onClick={()=>this.setDate()} />
                     </div>
-                </div> */}
+                    </div>
+                </div>
+                :null}
+
 
                 <div className='calWrap'>
                     <div className='calHeader'>
                         <div className='calArrow' onClick={()=>this.goback()}><img src={LeftArrow} alt="" title="July"/></div>
-                        {this.state.today}
+                        <div onClick={()=>this.showModal()} className='calCurrentDate'> {this.state.month} {this.state.year}</div>
                         <div className='calArrow' onClick={()=>this.forward()}> <img src={RightArrow} alt="" tilte="Septmember"/> </div>
                     </div>
 

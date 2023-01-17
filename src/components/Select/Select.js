@@ -10,12 +10,32 @@ export default class Input extends Component {
         this.state = {
             focused: false,
             text: this.props.text,
-            show: true
+            show: true,
+            defaultList:[
+                {
+                    title: 'Item One',
+                    value: 'Item One'
+                },
+                {
+                    title: 'Item Two',
+                    value: 'Item Two'
+                },
+                {
+                    title: 'Item Three',
+                    value: 'Item Three'
+                },
+                {
+                    title: 'Item Four',
+                    value: 'Item Four'
+                }
+            ]
+            
         }
         this.wrapperRef = React.createRef();
         this.handleClickOutside = this.handleClickOutside.bind(this);
         this.inputRef = React.createRef();
     }
+
     componentDidMount() {
         document.addEventListener("mousedown", this.handleClickOutside);
     }
@@ -38,6 +58,9 @@ export default class Input extends Component {
             text:text,
             showMenu:false,
         })
+        if(this.props.callback){
+            this.props.callback(text)
+        }
     }
     changer=()=>{}
     render() {
@@ -66,10 +89,24 @@ export default class Input extends Component {
 
             <div className='dropdownWrapper'>
                 <div className={this.state.showMenu ? 'dropdown dropdownOpen' : 'dropdown'}>
-                        <div className={this.state.text==='Item 1' ? 'item itemActive itemSelect' : 'item itemSelect'} onClick={()=>this.setItem("Item 1")}>Item 1</div>
+                        {this.props.listItems ?
+                            this.props.listItems.map((item,index)=>{
+                                return(
+                                    <div key={"List"+index} className={this.state.text===item.value ? 'item itemActive itemSelect' : 'item itemSelect'} onClick={()=>this.setItem(item.value)}>{item.title}</div>
+                                )
+                            })
+                        :
+                            this.state.defaultList.map((item,index)=>{
+                                return(
+                                    <div key={"List"+index} className={this.state.text===item.value ? 'item itemActive itemSelect' : 'item itemSelect'} onClick={()=>this.setItem(item.value)}>{item.title}</div>
+                                )
+                            })
+                        }
+                        {/* <div className={this.state.text==='Item 1' ? 'item itemActive itemSelect' : 'item itemSelect'} onClick={()=>this.setItem("Item 1")}>Item 1</div>
                         <div className={this.state.text==='Item 2' ? 'item itemActive itemSelect' : 'item itemSelect'} onClick={()=>this.setItem("Item 2")}>Item 2</div>
                         <div className={this.state.text==='Item 3' ? 'item itemActive itemSelect' : 'item itemSelect'} onClick={()=>this.setItem("Item 3")}>Item 3</div>
-                        <div className={this.state.text==='Item 4' ? 'item itemActive itemSelect' : 'item itemSelect'} onClick={()=>this.setItem("Item 4")}>Item 4</div>
+                        <div className={this.state.text==='Item 4' ? 'item itemActive itemSelect' : 'item itemSelect'} onClick={()=>this.setItem("Item 4")}>Item 4</div> */}
+
                 </div>
             </div>
 

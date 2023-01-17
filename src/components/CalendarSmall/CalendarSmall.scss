@@ -1,6 +1,30 @@
 @import '../../css/global.scss';
 
+.modalInner{
+    position: relative;
+    box-shadow: $shadow-blur;
+    padding: 40px;
+    background-color: white;
+    width: 360px;
+    height: 270px;
+    border-radius: $radius-small;
+    animation: slideUpModal $speed-normal $ease-bounce  forwards;
+    .inputWrap{
+        margin-left: -1px;
+        margin-bottom: 0;
+        margin-top: -10px;
+        width: 360px;
+    }
+    .selectWrap, .selectselectWrap{
+        width: 360px !important;
+        height: auto;
+    }
 
+    h1{
+        margin-bottom: 20px;
+    }
+   
+}
 .calWrap{
     position: relative;
     width: 320px;
@@ -23,6 +47,16 @@
     justify-content: space-between;
     align-items: center;
     text-transform: uppercase;
+
+    .calCurrentDate{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: calc(100% - 80px);
+        height: 40px;
+        cursor: pointer;
+       
+    }
 }
 .calArrow{
     height: 100%;

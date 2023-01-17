@@ -32,6 +32,9 @@
    width: 100%;
     margin-top: 10px;
 }
+.dropper{
+    width: 460px;
+}
 
 .dropdown{
     width: 100%;
@@ -108,6 +111,9 @@
 
 }
 
+.dropBasic{
+    max-width: 320px;
+}
 .dropdownOpen{
     padding: 10px 0;
     border: 1px solid $secondary-light-color;

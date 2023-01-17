@@ -48,8 +48,8 @@ export default class Dropdown extends Component {
                 <div className='buttonWrap'>
                     <Button onClick={()=>this.showMenu()} text="Click to show menu"/>
                 </div>
-            <div className='dropdownWrapper'>
-               <div className={this.state.showMenu ? 'dropdown dropdownOpen' : 'dropdown'}>
+            <div className='dropdownWrapper dropper'>
+               <div className={this.state.showMenu ? 'dropdown dropdownOpen dropBasic' : 'dropdown dropBasic'}>
                     <div className='item'>Item</div>
                     <div className='item'>Item</div>
                     <div className={this.state.show ? 'hasChild openChild' : 'hasChild'}>
