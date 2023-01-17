@@ -99,7 +99,9 @@ class CalendarSmall extends Component {
             this.setState({
                 hide: true,
                 month: 'September',
-                year: '2023'
+                year: '2023',
+                tempMonth: 'September',
+                tempYear: '2023'
             })
     }
     goback=()=>{
@@ -107,6 +109,8 @@ class CalendarSmall extends Component {
             hide: false,
             month: 'August',
             year: '2023',
+            tempMonth: 'August',
+            tempYear: '2023'
         })
     }
 
