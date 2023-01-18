@@ -20,6 +20,7 @@ import DateView from './Views/DateView/DateView';
 import MainmenuView from './Views/MainmenuView/MainmenuView';
 import FileView from './Views/FileView/FileView';
 import CalendarSmallView from './Views/CalendarSmallView/CalendarSmallView';
+import CalendarLargeView from './Views/CalendarLargeView/CalendarLargeView';
 
 let pageArray = [
     {
@@ -131,6 +132,11 @@ let pageArray = [
       title: 'Calendar Small',
       link: 'calsmall',
       comp: CalendarSmallView
+    },
+    {
+      title: 'Calendar Large',
+      link: 'callarge',
+      comp: CalendarLargeView
     }
   ]
 

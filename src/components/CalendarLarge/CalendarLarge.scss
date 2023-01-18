@@ -1,0 +1,257 @@
+@import '../../css/global.scss';
+
+.calLargeWrap{
+    position: relative;
+   width: 1000px;
+    height: 700px;
+}
+.calLargeHeader{
+    position: relative;
+    z-index: 60;
+    height: 40px;
+    background-color: $secondary-ultra-light-color;
+    color: $secondary-color;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    border: 1px solid $secondary-light-color;
+    border-bottom: none;
+    width: 100%;
+    cursor: pointer;
+    .calCurrentDate{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: calc(100% - 80px);
+        height: 40px;
+        cursor: pointer;
+        color: $dark-color;
+       
+    }
+}
+.calLargeDays{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr ;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid $secondary-light-color;
+    border-left: 1px solid $secondary-light-color;
+}
+
+.calLargeDay{
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    text-align: center;
+    // align-items: flex-start;
+    // justify-content: center;
+    border-right: 1px solid $secondary-light-color;
+    border-bottom: 1px solid $secondary-light-color;
+    width: 100%;
+    height: calc(100% - 10px);
+    font-size: 14px;
+    color: $secondary-color;
+}
+.calLargeDayName{
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: $dark-color;
+}
+
+.calLargeOtherMonth{
+    color: #CED8DC;
+}
+
+.calLargeEventList{
+    height: 100%;
+    margin: 0px 5px 5px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.calLargeEvent{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    background-color: $dark-color;
+    border-radius: 20px;
+    padding: 5px 5px 5px 10px;
+    width: calc(100% - 10px);
+    height: 10px;
+    color: white;
+    font-weight: bold;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all $speed-quick;
+}
+.calLargeEvent:hover{
+    background-color: $purple-color;
+}
+.calLargeToday{
+    position: relative;
+    color: white;
+}
+.calLargeToday:after{
+    position: absolute;
+    z-index: -1;
+    content: '';
+    width: 25px;
+    height: 25px;
+    background-color: $purple-color;
+    border-radius: 50%;
+    left: calc(50% - 12.5px);
+    top: 6px;
+}
+.calLargeEventOver{
+    background-color: $secondary-light-color;
+    color: $secondary-color;
+
+}
+.calLargeEventOver:hover{
+    background-color: $secondary-light-color;
+}
+.calLargeEventCancelled{
+    text-decoration: line-through;
+}
+
+.calLargeEvent:after{
+    position: absolute;
+    content: '';
+    width: 5px;
+    height: 5px;
+    background-color: $light-blue;
+    left: 5px;
+    border-radius: 50%;
+}
+.calLargeEventOver:After{
+    background-color: white;
+}
+
+.calLargeSeeMore{
+    font-size: 11px;
+    font-weight: 700;
+    color: $primary-color;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    margin-top: 2px;
+    transition: color $speed-normal;
+}
+.calLargeSeeMore:hover{
+    color: $purple-color;
+}
+
+.calLargeListPopup{
+    position: absolute;
+    z-index: 5;
+    top: 120px;
+    left: 200px;
+    width: 280px;
+    // height: 280px;
+    padding: 20px 20px 40px 20px;
+    background-color: white;
+    border: 1px solid $secondary-light-color;
+    box-shadow: $shadow;
+    border-radius: $radius-small;
+    animation: scaleIn $speed-normal $ease-bounce;
+   
+
+    .header{
+        width: 100%;
+        text-align: center;
+        color: $dark-color;
+      
+        .dayName{
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .dayNumber{
+            font-size: 14px;
+            color: $secondary-color;
+            margin-top: 10px;
+        }
+    }
+
+    .eventListPopup{
+        color: $secondary-color;
+        font-size: 14px;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: calc(100% - 120px);
+        .eventPopup{
+            position: relative;
+            display: flex;
+            padding-left: 20px;
+            margin-top: 10px;
+            line-height: 22px;
+            .timePopup{
+                font-weight: 700;
+                margin-right: 10px;
+            }
+        }
+        .eventPopup:after{
+            position: absolute;
+            content: '';
+            left: 0;
+            top: 4px;
+            width:8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: $light-blue;
+        }
+    }
+}
+
+.calLargeSelects{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    // grid-template-rows: 1fr 1fr;
+    align-items: flex-start;
+    height: 155px;
+    margin-top: 40px;
+    max-width: 100%;
+    line-height: normal;
+    .dateWrap{
+        width: calc(100% - 10px);
+        line-height: normal;
+        height: 77px;
+        margin-top: -3px;
+        input{
+            // outline: none;
+            // border: 1px solid $secondary-light-color;
+        }
+    }
+    // .dateWrap{
+    //     width: calc(100% - 6px);
+    //     // margin: 0;
+    //     // margin-top: -1px;
+    //     max-height: 80px;
+
+    // }
+    .selectWrap{
+        width: 100%;
+        height: 80px;
+        margin-top: -3px;
+        line-height: normal;
+        .selectselectWrap{
+            width: 100%;
+            // height: 40px;
+        }
+    }
+  
+}

@@ -55,7 +55,7 @@
         width: calc(100% - 80px);
         height: 40px;
         cursor: pointer;
-       
+        color: $dark-color;
     }
 }
 .calArrow{
@@ -84,11 +84,12 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     align-items: center;
     justify-content: center;
-    color: $secondary-color;
+    color: $dark-color;
     font-size: 12px;
     font-weight: 700;
     height: 40px;
     padding: 0 10px;
+    
     .calDays{
         display: flex;
         align-items: center;

@@ -39,10 +39,14 @@ export default class DateInput extends Component {
             showMenu:false,
         })
     }
-    changer=()=>{}
+    changer=(e)=>{
+        this.setState({
+            text: e.target.value
+        })
+    }
     render() {
         return (
-            <div className='dateWrap' ref={this.wrapperRef}>
+            <div ref={this.wrapperRef}>
             <div 
             className={
                 this.state.focused ? 
@@ -56,12 +60,11 @@ export default class DateInput extends Component {
                 ref={this.inputRef}  
                 placeholder={this.props.placeholder} 
                 value={this.state.text}
-                onChange={()=>this.changer()}
+                onChange={(e)=>this.changer(e)}
                 onFocus={()=>this.focusInput()}
                 onBlur={()=>this.focusInput()} 
                 type="date"
                 />
-                {/* <div className="chevronIcon"><Chevron stroke={"#597897"}/></div> */}
 
             </div>
 

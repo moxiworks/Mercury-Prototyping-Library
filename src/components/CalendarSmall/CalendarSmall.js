@@ -154,7 +154,7 @@ class CalendarSmall extends Component {
                 {this.state.showModal ? 
                 <div className='modalWrapper'>
                     <div className='modalInner' ref={this.wrapperRef}>
-                        <CloseButton type="internal" onClick={()=>this.hideModal()}/>
+                        {/* <CloseButton type="internal" onClick={()=>this.hideModal()}/> */}
                     <h1>Choose Date</h1>
                     <Select text={this.state.tempMonth} label="Month" listItems={this.state.months} callback={(text)=>this.changeMonth(text)}/>
                     <Input text={this.state.tempYear} label="Year" onChange={(text)=>this.changeYear(text)}/>
