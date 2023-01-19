@@ -170,18 +170,28 @@
 
     .header{
         width: 100%;
-        text-align: center;
+        // text-align: center;
         color: $dark-color;
-      
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
         .dayName{
             font-size: 12px;
             font-weight: 700;
             text-transform: uppercase;
         }
         .dayNumber{
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 14px;
-            color: $secondary-color;
+            color: white;
             margin-top: 10px;
+            width: 25px;
+            height: 25px;
+            background-color: $dark-color;
+            border-radius: 50%;
         }
     }
 
@@ -208,9 +218,9 @@
             position: absolute;
             content: '';
             left: 0;
-            top: 4px;
-            width:8px;
-            height: 8px;
+            top: 9px;
+            width: 4px;
+            height: 4px;
             border-radius: 50%;
             background-color: $light-blue;
         }
@@ -222,27 +232,21 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     // grid-template-rows: 1fr 1fr;
     align-items: flex-start;
-    height: 155px;
+    // height: 155px;
     margin-top: 40px;
     max-width: 100%;
     line-height: normal;
+
     .dateWrap{
-        width: calc(100% - 10px);
+        width: calc(100% - 11px);
         line-height: normal;
-        height: 77px;
-        margin-top: -3px;
+        height: 76px;
+        margin-top: -4px;
         input{
-            // outline: none;
-            // border: 1px solid $secondary-light-color;
+            outline: none;
+            border: 1px solid $secondary-light-color;
         }
     }
-    // .dateWrap{
-    //     width: calc(100% - 6px);
-    //     // margin: 0;
-    //     // margin-top: -1px;
-    //     max-height: 80px;
-
-    // }
     .selectWrap{
         width: 100%;
         height: 80px;
@@ -250,8 +254,88 @@
         line-height: normal;
         .selectselectWrap{
             width: 100%;
-            // height: 40px;
         }
     }
+
+    
   
 }
+.modalContentCal{
+
+    .eventInfo{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        min-width: 100%;
+        // height: 200px;
+        margin-top: 20px;
+    }
+    
+    .attendees{
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap:5px;
+        max-height: 160px;
+        overflow-y: scroll;
+       
+        .attendee{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 50px;
+            background-color: $secondary-ultra-light-color;
+            border-radius: $radius-small;
+            padding: 0 10px ;
+            width: calc(100% - 30px);
+            .avatar{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 12px;
+                font-weight: 700;
+                width: 30px;
+                height: 30px;
+                background-color: $purple-color;
+               border-radius: 50%;
+            }
+            .info{
+                width: calc(100% - 80px);
+                height: 45px;
+                text-align: left;
+                line-height: 14px;
+                display: flex;
+                flex-direction: column;
+               justify-content: center;
+                .name{
+                    font-size: 14px;
+                    font-weight: 700;
+                }
+                .email{
+                    font-size: 11px;
+                }
+            }
+            .icon{
+                width: 30px;
+                height: 30px;
+                // background-color: $purple-color;
+            }
+        }
+
+    }
+}
+
+.attendees::-webkit-scrollbar-track {
+    background: transparent;
+    width: 50px;
+    background-color: $secondary-ultra-light-color;
+    border-radius: 20px;
+  }
+  .attendees::-webkit-scrollbar {
+    width: 6px;
+    border-radius: 20px;
+  }
+  .attendees::-webkit-scrollbar-thumb {
+    background:$secondary-light-color;
+    border-radius: 20px;
+  }

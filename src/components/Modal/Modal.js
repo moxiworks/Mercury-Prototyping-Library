@@ -28,11 +28,18 @@ class Modal extends Component {
                 <div className='modalContent'  ref={this.wrapperRef}>
                     <CloseButton type="internal" onClick={()=>this.props.onClick()}/>
                     <h1>{this.props.heading}</h1>
+                    <div className='subTitle'>
+                        {this.props.icon ? <img src={this.props.icon}/> : null}
+                        {this.props.subTitle}
+                    </div>
                     <div className='modalText'>
                         {this.props.content}
                     </div>
                     <div className='modalButtons'>
-                        <Button text="Done" onClick={()=>this.props.onClick()}/>
+                        {this.props.cancelButton ? 
+                         <Button text="Cancel" onClick={()=>this.props.onCancel()} type="text"/>
+                         :null}
+                        <Button text={this.props.mainButtonText} onClick={()=>this.props.onClick()}/>
                     </div>
                 </div>
                 

@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import './CalendarLarge.scss'
 import LeftArrow  from '../../images/left-arrow.svg'
 import RightArrow  from '../../images/right-arrow.svg'
-import CloseButton from '../CloseButton/CloseButton';
+import MapIcon  from '../../images/map-icon.svg'
+import George  from '../../images/george.png'
+import CloseButton from '../CloseButton/CloseButton'
 import Modal from '../Modal/Modal'
 import Select from '../Select/Select'
 import DateInput from '../DateInput/DateInput'
+import Label from '../Label/Label';
 class CalendarLarge extends Component {
     constructor(props) {
         super(props);
@@ -47,15 +50,79 @@ class CalendarLarge extends Component {
 
      event=()=>{
         return(
+            <div className='modalContentCal'>
             <div className='calLargeSelects'>
                 <Select label="Start Time" text="6:30pm" listItems={this.state.times}/>
                 <DateInput label="Start Date" text="2023-08-04"/>
                 <Select label="End Time" listItems={this.state.times} text="6:45pm"/>
                 <DateInput label="End Date" text="2023-08-04"/>
                 <Select label="All day" text="No" listItems={[{title:'Yes', value:'Yes'},{title:'No',value:'No'}]}/>
-                <Select label="Repeats" text="1" listItems={[{title:'1', value:'1'},{title:'2',value:'2'},{title:'3',value:'3'}]}/>
+                <Select label="Repeats" text="Never" listItems={[{title:'Never', value:'Never'},{title:'Forever', value:'Forever'},{title:'1', value:'1'},{title:'2',value:'2'},{title:'3',value:'3'}]}/>
                 <Select label="Alerts" text="5 mins before" listItems={[{title:'5 mins before', value:'5 mins before'},{title:'15 mins before',value:'15 mins before'}]}/>
                 <Select label="Attending" text="Yes" listItems={[{title:'Yes', value:'Yes'},{title:'No',value:'No'}]}/>
+                
+            </div>
+            <div className='eventInfo'>
+                    <div>
+                        <Label text="Description"/>
+                        <div className='description'>
+                            Ring Sam Cook in relation to 4/1045 Myrtle Ave Bushwick. Sam is keen but may need some convincing that this is the place for her.
+                        </div>
+                    </div>
+                    <div>
+                        <Label text="Attendees (5)"/>
+
+                        <div className='attendees'>
+
+                            <div className='attendee'>
+                                <div className='avatar'>SC</div>
+                                <div className='info'>
+                                    <div className='name'>Sam Cook</div>
+                                    <div className='email'>sam.cook@realestate.com</div>
+                                </div>
+                                <div className='icon'></div>
+                            </div>
+
+                            <div className='attendee'>
+                                <div className='avatar'>SC</div>
+                                <div className='info'>
+                                    <div className='name'>Sam Cook</div>
+                                    <div className='email'>sam.cook@realestate.com</div>
+                                </div>
+                                <div className='icon'></div>
+                            </div>
+
+                            <div className='attendee'>
+                                <div className='avatar'>SC</div>
+                                <div className='info'>
+                                    <div className='name'>Sam Cook</div>
+                                    <div className='email'>sam.cook@realestate.com</div>
+                                </div>
+                                <div className='icon'></div>
+                            </div>
+
+                            <div className='attendee'>
+                                <div className='avatar'>SC</div>
+                                <div className='info'>
+                                    <div className='name'>Sam Cook</div>
+                                    <div className='email'>sam.cook@realestate.com</div>
+                                </div>
+                                <div className='icon'></div>
+                            </div>
+
+                            <div className='attendee'>
+                                <div className='avatar'>SC</div>
+                                <div className='info'>
+                                    <div className='name'>Sam Cook</div>
+                                    <div className='email'>sam.cook@realestate.com</div>
+                                </div>
+                                <div className='icon'></div>
+                            </div>
+
+                           
+                        </div>
+                    </div>
+            </div>
             </div>
         )
      }
@@ -67,8 +134,14 @@ class CalendarLarge extends Component {
                 {this.state.showModal ? 
                 <Modal 
                 heading={this.state.eventName} 
+                subTitle="625 Broadway Williamsburg"
+                icon={MapIcon}
                 content={this.event()}
-                onClick={()=>this.closeModal()}/>
+                onClick={()=>this.closeModal()}
+                onCancel={()=>this.closeModal()}
+                mainButtonText="Update"
+                cancelButton={true}
+                />
                 : null}
                 <div className='calLargeHeader'>
                         <div className='calArrow' onClick={()=>this.goback()}><img src={LeftArrow} alt="" title="July"/></div>
@@ -175,6 +248,14 @@ class CalendarLarge extends Component {
                     <div className='eventPopup'>
                         <div className='timePopup'>7pm</div>
                        Dinner at the house with family
+                    </div>
+                    <div className='eventPopup'>
+                        <div className='timePopup'>8pm</div>
+                       Call Brian
+                    </div>
+                    <div className='eventPopup'>
+                        <div className='timePopup'>11pm</div>
+                       Bed
                     </div>
 
                 </div>

@@ -70,10 +70,10 @@
         transform: rotate(90deg);
         }
     }
-    input{
-        outline: 1px solid $primary-color !important;
-        border: none;
-    }
+    // input{
+    //     outline: 1px solid $primary-color !important;
+    //     border: none;
+    // }
 }
 .dateWrapFocused:before{
     position: absolute;
