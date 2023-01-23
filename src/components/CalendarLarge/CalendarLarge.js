@@ -18,7 +18,7 @@ class CalendarLarge extends Component {
         year: '2023',
         showEvents: false,
         eventName: 'Ring Sam Cook',
-        showModal: true,
+        showModal: false,
         times:     [
             { title: '5:00pm', value: '5:00pm'},
             { title: '5:30pm', value: '5:30pm'},
