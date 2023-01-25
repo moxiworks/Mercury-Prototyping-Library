@@ -19,6 +19,7 @@ class CalendarLarge extends Component {
         showEvents: false,
         eventName: 'Ring Sam Cook',
         showModal: false,
+        saving: false,
         times:     [
             { title: '5:00pm', value: '5:00pm'},
             { title: '5:30pm', value: '5:30pm'},
@@ -127,6 +128,19 @@ class CalendarLarge extends Component {
         )
      }
 
+     savingEvent=()=>{
+        this.setState({
+            saving: true
+        })
+        setTimeout(() => {
+            this.setState({
+                saving: false
+            },()=>{
+                this.closeModal()
+            })
+        }, 1500);
+     }
+
 
     render() { 
         return (  
@@ -137,10 +151,11 @@ class CalendarLarge extends Component {
                 subTitle="625 Broadway Williamsburg"
                 icon={MapIcon}
                 content={this.event()}
-                onClick={()=>this.closeModal()}
+                onClick={()=>this.savingEvent()}
                 onCancel={()=>this.closeModal()}
                 mainButtonText="Update"
                 cancelButton={true}
+                buttonType={this.state.saving?"saving":""}
                 />
                 : null}
                 <div className='calLargeHeader'>
@@ -183,7 +198,7 @@ class CalendarLarge extends Component {
                                         <div className='calLargeEvent' onClick={()=>this.showModal()}>3pm Design mee...</div>
                                         <div className='calLargeEvent' onClick={()=>this.showModal()}>4pm Catch up with...</div>
                                         <div className='calLargeEvent' onClick={()=>this.showModal()}>7pm Dinner at the...</div>
-                                        <div className='calLargeSeeMore' onClick={()=>this.showEvents()}>See More</div>
+                                        <div className='calLargeSeeMore' onClick={()=>this.showEvents()}>See More +</div>
                                     </div>
                                 </div>
                                 <div className='calLargeDay'>10</div>
@@ -233,27 +248,27 @@ class CalendarLarge extends Component {
                 </div>
                 <div className='eventListPopup'>
 
-                    <div className='eventPopup'>
+                    <div className='eventPopup' onClick={()=>this.showModal()}>
                         <div className='timePopup'>2pm</div>
                         Ring Sam Cook
                     </div>
-                    <div className='eventPopup'>
+                    <div className='eventPopup' onClick={()=>this.showModal()}>
                         <div className='timePopup'>3pm</div>
                        Design meeting with product and engineering.
                     </div>
-                    <div className='eventPopup'>
+                    <div className='eventPopup' onClick={()=>this.showModal()}>
                         <div className='timePopup'>4pm</div>
                         Catch up with Nora for drinks.
                     </div>
-                    <div className='eventPopup'>
+                    <div className='eventPopup' onClick={()=>this.showModal()}>
                         <div className='timePopup'>7pm</div>
                        Dinner at the house with family
                     </div>
-                    <div className='eventPopup'>
+                    <div className='eventPopup' onClick={()=>this.showModal()}>
                         <div className='timePopup'>8pm</div>
                        Call Brian
                     </div>
-                    <div className='eventPopup'>
+                    <div className='eventPopup' onClick={()=>this.showModal()}>
                         <div className='timePopup'>11pm</div>
                        Bed
                     </div>

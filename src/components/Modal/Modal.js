@@ -18,7 +18,7 @@ class Modal extends Component {
 
     handleClickOutside(event) {
         if (this.wrapperRef && this.wrapperRef.current && ! this.wrapperRef.current.contains(event.target)) {
-          this.props.onClick()
+          this.props.onCancel()
         }
       }
 
@@ -26,7 +26,7 @@ class Modal extends Component {
         return ( 
             <div className='modalWrapper' >
                 <div className='modalContent'  ref={this.wrapperRef}>
-                    <CloseButton type="internal" onClick={()=>this.props.onClick()}/>
+                    <CloseButton type="internal" onClick={()=>this.props.onCancel()}/>
                     <h1>{this.props.heading}</h1>
                     <div className='subTitle'>
                         {this.props.icon ? <img src={this.props.icon}/> : null}
@@ -37,9 +37,9 @@ class Modal extends Component {
                     </div>
                     <div className='modalButtons'>
                         {this.props.cancelButton ? 
-                         <Button text="Cancel" onClick={()=>this.props.onCancel()} type="text"/>
+                         <Button text="Cancel" onClick={()=>this.props.onCancel()} type={"text"}/>
                          :null}
-                        <Button text={this.props.mainButtonText} onClick={()=>this.props.onClick()}/>
+                        <Button text={this.props.mainButtonText} onClick={()=>this.props.onClick()} type={this.props.buttonType?this.props.buttonType:""}/>
                     </div>
                 </div>
                 

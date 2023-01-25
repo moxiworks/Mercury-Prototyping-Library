@@ -26,7 +26,9 @@ export default class ButtonView extends Component {
         return (
             <div className="wrap">
                 <Button text={this.state.text} onClick={()=>this.showPic()}/>
+                <Button text="Saving" onClick={()=>this.showPic()} type="saving"/>
                 <Button text="Small Button" onClick={()=>this.showPic()} type="small"/>
+               
             </div>
         )
     }

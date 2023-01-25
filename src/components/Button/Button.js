@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SearchLoader from '../../images/small-loader.svg'
 import './Button.scss'
 export default class Button extends Component {
 
@@ -45,6 +46,10 @@ export default class Button extends Component {
             this.props.type==='delete' 
             ?
             <button onClick={()=>this.clicked()} className={this.state.active ? 'button buttonActive buttonDelete' : 'button buttonDelete' } disabled={this.props.disabled}>{this.props.text}</button>
+            :
+            this.props.type==='saving' 
+            ?
+            <button onClick={()=>this.clicked()} className={this.state.active ? 'button buttonActive buttonSaving' : 'button buttonSaving'} disabled={this.props.disabled}><img src={SearchLoader}/>{this.props.text}</button>
             :
             <button onClick={()=>this.clicked()} className={this.state.active ? 'button buttonActive' : 'button'} disabled={this.props.disabled}>{this.props.text}</button>
         )

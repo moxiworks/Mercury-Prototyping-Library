@@ -75,6 +75,18 @@ font-weight: 700;
     filter: brightness(0.75);
 }
 
+.buttonSaving, .buttonSaving:hover{
+    position: relative;
+    background-color: $secondary-light-color;
+    color: $secondary-color;
+    filter: none !important;
+    img{
+        position: absolute;
+        left: 10px;
+        animation: spinner $speed-quick linear infinite;
+    }
+}
+
 @keyframes scaleOut {
     0%{
         opacity: 0;
