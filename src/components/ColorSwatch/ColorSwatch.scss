@@ -1,0 +1,40 @@
+@import '../../css/global.scss';
+
+.colorSwatch{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    background-color: $secondary-ultra-light-color;
+    width: 120px;
+    height: 140px;
+    border-radius: $radius-small;
+    cursor: pointer;
+    transition: all $speed-quick;
+    .color{
+        width: 80px;
+        height: 80px;
+        background-color: red;
+        border-radius: $radius-small;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: white;
+        font-weight: 700;
+        margin-top: 10px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: transparent;
+    }
+    .colorName{
+        font-size: 14px;
+        font-weight: 700;
+        // margin-top: 10px;
+        color: $secondary-color;
+    }
+}
+.colorSwatch:hover{
+    box-shadow: $shadow;
+}

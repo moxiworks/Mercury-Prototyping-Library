@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="340px" height="180px" viewBox="0 0 340 180" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Artboard</title>
+     <style>
+    #circ{
+         stroke-dasharray: 880;
+         transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+         <!-- stroke-dashoffset: 440; -->
+    }
+    </style>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#FFFFFF" x="0" y="0" width="340" height="180"></rect>
+        <g id="Graph" transform="translate(10.000000, 20.000000)">
+            <circle id="Oval" stroke="#F3F5F6" stroke-width="60" cx="160" cy="160" r="130"></circle>
+            <circle id="Oval" id="circ" stroke="currentColor" stroke-width="60" cx="160" cy="160" r="130" ></circle>
+        </g>
+    </g>
+</svg>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import HandWave from '../../images/hand-wave.svg'
 import WhiteCross from '../../images/white-cross.svg'
+import CheckIcon from '../../images/Check.svg'
 import Button from '../Button/Button';
 import './Banner.scss'
 
@@ -21,7 +22,9 @@ class Banner extends Component {
             show: "show",
             timer: 5
         },()=>{
-    
+            setTimeout(() => {
+                this.hide()
+            }, 2000);
         })
     }
 
@@ -31,6 +34,9 @@ class Banner extends Component {
             timer: 5
         })
     }
+    getAlert() {
+        alert('getAlert from Child');
+      }
  
     render() { 
         return (  
@@ -38,17 +44,26 @@ class Banner extends Component {
                 <div 
                 className={this.state.show==='show' ? 'bannerAlert slideDown' : this.state.show==='hide' ? 'bannerAlert slideUp' : 'bannerAlert'}
                 onClick={()=>this.hide()}
+                style={{backgroundColor:this.props.type==='success'?'#1FCDAB':''}}
                 >
-                    <div className='bannerIcon'><img src={HandWave} alt="sad face"/></div>
+                    <div className='bannerIcon'>
+                        <img src={
+                            this.props.type==='success'?
+                            CheckIcon
+                            :
+                            HandWave
+                        } alt="Wave"/>
+                    </div>
                     <div className='bannerContent'>
-                        <div className='bannerText'>I have no actions, just telling you something.</div>
+                        <div className='bannerText'>{this.props.text}</div>
                         <div className='rhs'>
-                             {/* {this.state.timer} */}
                              <img src={WhiteCross} alt="Close"/>
                         </div>
                     </div>
                 </div>
+                {this.props.hasButton? 
                 <Button text="Show Notification" onClick={()=>this.show()}/>
+                :null}
             </div>
         );
     }

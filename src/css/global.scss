@@ -10,7 +10,10 @@ $shadow-color: rgba(206,216,220,0.5);
 $purple-color: #9C5AF2;
 $error-color: #FF4330;
 $light-blue: #76C8FE;
-
+small{
+    color: $secondary-color;
+    font-size: 14px;
+}
 // ANIMATION
 $speed-quick: 0.2s;
 $speed-normal: 0.4s;

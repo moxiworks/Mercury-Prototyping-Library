@@ -21,7 +21,7 @@ export default class BannerView extends Component {
     render() {
         return (
             <div>
-            <Banner/>
+            <Banner text="I have no actions, just telling you something." hasButton={true}/>
             </div>
         )
     }

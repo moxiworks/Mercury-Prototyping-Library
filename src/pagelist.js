@@ -21,8 +21,15 @@ import MainmenuView from './Views/MainmenuView/MainmenuView';
 import FileView from './Views/FileView/FileView';
 import CalendarSmallView from './Views/CalendarSmallView/CalendarSmallView';
 import CalendarLargeView from './Views/CalendarLargeView/CalendarLargeView';
+import ColorsView from './Views/ColorsView/ColorsView';
+import OvalGraph from './Views/OvalGraph/OvalGraph';
 
 let pageArray = [
+  {
+    title: 'Colors',
+    link: 'colors',
+    comp: ColorsView
+  },
     {
       title: 'Text Input',
       link: 'textinput',
@@ -109,9 +116,14 @@ let pageArray = [
       comp: LoaderView
     },
     {
-      title: 'Graphs',
+      title: 'Bar Graph',
       link: 'graphs',
       comp: GraphView
+    },
+    {
+      title: 'Oval Graph',
+      link: 'ovalgraph',
+      comp: OvalGraph
     },
     {
       title: 'Modal',
