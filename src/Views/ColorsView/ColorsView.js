@@ -18,6 +18,10 @@ class ColorsView extends Component {
                     color: '#0073E6'
                 },
                 {
+                    name: 'Primary: Light',
+                    color: '#6BC4FF'
+                },
+                {
                     name: 'Primary: Hover',
                     color: '#4096EC'
                 },
@@ -37,7 +41,7 @@ class ColorsView extends Component {
                 },
                 {
                     name: 'Secondary: Light',
-                    color: '#CED8DC',
+                    color: '#DFE5E8',
                     secondaryColor: '#597897'
                 },
                 {
@@ -58,7 +62,7 @@ class ColorsView extends Component {
                 },
                 {
                     name: 'Tertiary: Dark',
-                    color: '#5E3691'
+                    color: '#653496'
                 }
             ],
             [
@@ -127,7 +131,7 @@ class ColorsView extends Component {
                 })}
             </div>
 
-            <Banner text={"Color Copied: " + this.state.copiedColor} ref={this.child} type="success"/>
+            <Banner text={"Color Copied: #" + this.state.copiedColor} ref={this.child} type="success"/>
             </div>
         );
     }

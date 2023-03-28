@@ -23,6 +23,7 @@ import CalendarSmallView from './Views/CalendarSmallView/CalendarSmallView';
 import CalendarLargeView from './Views/CalendarLargeView/CalendarLargeView';
 import ColorsView from './Views/ColorsView/ColorsView';
 import OvalGraph from './Views/OvalGraph/OvalGraph';
+import PropertyCardView from './Views/PropertyCardView/PropertyCardView';
 
 let pageArray = [
   {
@@ -149,6 +150,11 @@ let pageArray = [
       title: 'Calendar Large',
       link: 'callarge',
       comp: CalendarLargeView
+    },
+    {
+      title: 'Property Card',
+      link: 'propcard',
+      comp: PropertyCardView
     }
   ]
 

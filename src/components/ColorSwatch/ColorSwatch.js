@@ -6,8 +6,8 @@ class ColorSwatch extends Component {
      } 
 
      copyColor= async ()=>{
-        await navigator.clipboard.writeText(this.props.color);
-        this.props.callback(this.props.color)
+        await navigator.clipboard.writeText(this.props.color.replace("#",''));
+        this.props.callback(this.props.color.replace("#",''))
      }
 
     render() { 

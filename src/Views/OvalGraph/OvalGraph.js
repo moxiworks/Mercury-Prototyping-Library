@@ -20,26 +20,27 @@ class OvalGraph extends Component {
                 ovalAmount:'150',
                 ovalAmount2: '266'
             })
+            let inter = setInterval(() => {
+                if(this.state.count<75){
+                    this.setState({
+                        count: this.state.count+1
+                    })
+                }else{
+                    clearInterval(inter)
+                }
+            }, 10);
+            let inter2 = setInterval(() => {
+                if(this.state.count2<50){
+                    this.setState({
+                        count2: this.state.count2+1
+                    })
+                }else{
+                    clearInterval(inter2)
+                }
+            }, 10);
+
         }, 200);
         
-        let inter = setInterval(() => {
-            if(this.state.count<75){
-                this.setState({
-                    count: this.state.count+1
-                })
-            }else{
-                clearInterval(inter)
-            }
-        }, 10);
-        let inter2 = setInterval(() => {
-            if(this.state.count2<50){
-                this.setState({
-                    count2: this.state.count2+1
-                })
-            }else{
-                clearInterval(inter2)
-            }
-        }, 10);
 
       }
   
@@ -52,7 +53,7 @@ class OvalGraph extends Component {
 
             <div className='ovalGraph'>
                 <OvalGraphComp strokeDashoffset={this.state.ovalAmount} color="#9C5AF2"/>
-                <div className='ovalAmount'>{this.state.count}<sup>%</sup></div>
+                <div className={this.state.doBlur? 'ovalAmount blurFilter':'ovalAmount'}>{this.state.count}<sup>%</sup></div>
                 <div className='desciption'><strong>$150,000</strong> of <strong>$200,000</strong> GCI goal</div>
                 <div className='lineIndicator'>
                     <div className='inner'>

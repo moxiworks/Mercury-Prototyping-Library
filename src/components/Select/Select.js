@@ -102,10 +102,6 @@ export default class Input extends Component {
                                 )
                             })
                         }
-                        {/* <div className={this.state.text==='Item 1' ? 'item itemActive itemSelect' : 'item itemSelect'} onClick={()=>this.setItem("Item 1")}>Item 1</div>
-                        <div className={this.state.text==='Item 2' ? 'item itemActive itemSelect' : 'item itemSelect'} onClick={()=>this.setItem("Item 2")}>Item 2</div>
-                        <div className={this.state.text==='Item 3' ? 'item itemActive itemSelect' : 'item itemSelect'} onClick={()=>this.setItem("Item 3")}>Item 3</div>
-                        <div className={this.state.text==='Item 4' ? 'item itemActive itemSelect' : 'item itemSelect'} onClick={()=>this.setItem("Item 4")}>Item 4</div> */}
 
                 </div>
             </div>

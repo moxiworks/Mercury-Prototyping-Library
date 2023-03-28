@@ -2,9 +2,9 @@
 <svg width="320px" height="160px" viewBox="0 0 320 160" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Oval</title>
      <style>
-    #Oval{
+    #circ{
          stroke-dasharray: 880;
-         transition: all 0.2s
+         transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
          <!-- stroke-dashoffset: 440; -->
     }
     </style>
@@ -13,12 +13,14 @@
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Artboard" transform="translate(-540.000000, -280.000000)">
-            <g id="Oval" transform="translate(540.000000, 280.000000)">
+            <g id="Ovasl" transform="translate(540.000000, 280.000000)">
                 <mask id="mask-2" fill="white">
                     <use xlink:href="#path-1"></use>
                 </mask>
                 <g id="Mask"></g>
-                <circle stroke="#00AAFF" stroke-width="40" mask="url(#mask-2)" cx="160" cy="160" r="140" style='stroke-dashoffset: ${this.props.strokeDashoffset}'></circle>
+                <circle stroke="#F3F5F6" stroke-width="40" mask="url(#mask-2)" cx="160" cy="160" r="140"></circle>
+                <circle id="circ" stroke="#00AAFF" stroke-width="40" mask="url(#mask-2)" cx="160" cy="160" r="140" style='stroke-dashoffset: ${this.props.strokeDashoffset}'></circle>
+               
             </g>
         </g>
     </g>

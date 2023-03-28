@@ -1,0 +1,234 @@
+@import '../../css/global.scss';
+.propCardWrapper{
+    display: flex;
+    gap: 40px;
+}
+.cardWrap{
+    position: relative;
+    width: 260px;
+    height: 360px;
+    background-color: $secondary-ultra-light-color;
+    display: grid;
+    grid-template-rows: 180px 1fr;
+    border-radius: $radius-small;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all $speed-quick;
+    margin-bottom: 40px;
+
+    .cardType{
+        position: absolute;
+        z-index: 500;
+        width: 80px;
+        height: 20px;
+        left: calc(50% - 40px);
+        background-color: $light-green;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 700;
+        color: white;
+        text-transform: uppercase;
+        border-radius: $radius-small;
+    }
+    
+    .cardTop{
+        position: relative;
+        width: 100%;
+        height: 180px;
+        background-color: $dark-color;
+       
+        img{
+            opacity:1;
+            transition: all $speed-quick;
+        }
+    }
+   
+
+    .cardBottom{
+        width: 100%;
+        height: calc(100% - 30px);
+        padding: 10px;
+        display: grid;
+        grid-template-rows: 20px 1fr 25px;
+        color: $secondary-color;
+        
+       
+        .cardDetailsTop{
+            display: flex;
+            justify-content: space-between;
+            width: calc(100% - 20px);
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+        .cardDetailsCenter{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: calc(100% - 20px);
+            .cardPrice{
+                font-size: 20px;
+                font-weight: 700;
+            }
+            .cardAddress{
+                font-size: 14px;
+                text-align: center;
+                margin-top: 5px;
+            }
+        }
+        .cardDetailsBottom{
+            width: calc(100% - 20px);
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(3, auto);
+            .bbcCards{
+                display: grid;
+                width: calc(100% - 10px);
+                height: 100%;
+                grid-template-columns: 20px 1fr;
+                justify-content: center;
+                align-items: center;
+                background-color: white;
+                height: 30px;
+                border-radius: $radius-small;
+                padding-left: 10px;
+                .bbcText{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: 700;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+}
+.cardWrap:hover{
+    box-shadow: $shadow;
+    transform: translateY(-5px);
+    .cardTop::after{
+        position: absolute;
+        top:0;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-image: url('/images/eye-icon-large.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        animation: scaleIn $speed-normal $ease-bounce;
+    }
+    .cardTop{
+        img{
+            opacity: 0.5;
+        }
+    }
+
+    
+    
+}
+
+// .cardWrapInfo:hover{
+//     box-shadow: $shadow;
+//     .cardTop:hover{
+//         img{
+//             opacity: 0.5;
+//         }
+//     }
+//     .cardTop:hover::after{
+//         position: absolute;
+//         top:0;
+//         left: 0;
+//         content: '';
+//         width: 100%;
+//         height: 100%;
+//         background-image: url('/images/eye-icon-large.svg');
+//         background-repeat: no-repeat;
+//         background-position: center;
+//         animation: scaleIn $speed-normal $ease-bounce;
+//     }
+
+    
+// }
+
+.cardWrapInfo{
+    height: 420px;
+    grid-template-rows: 60px 180px 1fr;
+
+    .cardType{
+        margin-top: 60px;
+    }
+    .cardInfo{
+        display: grid;
+        grid-template-columns: 1fr 40px;
+        padding: 10px;
+        overflow: visible;
+        .lhs{
+            display: grid;
+            grid-template-columns: 40px 1fr;
+            align-items: center;
+            gap: 10px;
+            .name{
+                font-size: 16px;
+                font-weight: 700;
+                color: $secondary-color;
+            }
+            .listingType{
+                font-size: 12px;
+                color: $secondary-color;
+                text-transform: uppercase;
+            }
+        }
+        .profilePic{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            img{
+                width: 100%;
+            }
+        }
+
+        .rhs{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all $speed-normal;
+            img{
+                transition: all $speed-normal $ease-bounce;
+            }
+        }
+        .rhs:hover{
+            background-color: white;
+            border-radius: 50%;
+            // img{
+            //     transform: rotate(90deg);
+            // }
+        }
+        .rhsActive{
+            background-color: white;
+            border-radius: 50%;
+            img{
+                transform: rotate(90deg);
+            }
+        }
+
+    }
+    .dropdownWrapper{
+        margin-top: 0;
+        position: absolute;
+        z-index: 9000000;
+        top: 55px;
+        right: -20px;
+    }
+    .dropdown{
+        width: 200px;
+    }
+    
+}
