@@ -1,0 +1,166 @@
+@import '../../css/global.scss';
+
+.tableWrapper {
+    width: 100%;
+    max-width: 800px;
+}
+
+.merTable {
+    width: 100%;
+    color: $secondary-color;
+    border: 1px solid $secondary-light-color;
+    border-bottom: none;
+    border-spacing: 0px;
+    font-size: 14px;
+    border-radius: $radius-small;
+    margin-top: 40px;;
+
+    thead {
+        tr {
+            background-color: $secondary-ultra-light-color;
+        }
+
+        th {
+            padding: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-align: left;
+            border-bottom: 1px solid $secondary-light-color;
+            cursor: pointer;
+
+            img {
+                width: 9px;
+                margin-left: 10px;
+                transition: all $speed-quick;
+            }
+
+            .noArrow {
+                display: inline-block;
+                width: 9px;
+                height: 0px;
+                margin-left: 10px;
+            }
+            .arrowUp{
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    tbody {
+        td {
+            position: relative;
+            padding: 20px;
+            border-bottom: 1px solid $secondary-light-color;
+        }
+
+        tr {
+            cursor: pointer;
+            transition: all $speed-quick;
+        }
+
+        tr:hover {
+
+            background-color: $secondary-ultra-light-color;
+
+        }
+
+        .moreBtn:hover:after {
+            position: absolute;
+            z-index: 2;
+            content: '';
+            top: 10px;
+            left: 9px;
+            width: 40px;
+            background-color: white;
+            border-radius: 50%;
+            height: 40px;
+            animation: fadeIn $speed-normal;
+        }
+
+        .moreBtn:hover {
+            img {
+                position: relative;
+                z-index: 3;
+            }
+        }
+
+        .moreBtn {
+            .moreMenu {
+                position: absolute;
+                z-index: 20;
+                right: 20px;
+                top: 10px;
+                width: 140px;
+                height: 40px;
+                background-color: $purple-color;
+                border-radius: $radius-small;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 20px;
+                padding: 0 20px;
+                animation: appearLeft 0.4s $ease-bounce forwards;
+                text-transform: uppercase;
+                font-size: 12px;
+                font-weight: 700;
+
+                .toolBtns {
+                    display: flex;
+                    gap: 10px
+                }
+
+                img {
+                    animation: spinRight $speed-normal forwards;
+                    animation-delay: 0.1s;
+                    margin-right: -5px;
+                }
+
+            }
+            .toolBtn{
+                transition: all $speed-quick;
+            }
+            .toolBtn:hover {
+                opacity: 0.5;
+            }
+        }
+
+    }
+}
+
+.scaleOut {
+    animation: scaleOut $speed-normal forwards;
+}
+
+@keyframes spinRight {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(90deg)
+    }
+}
+
+@keyframes appearLeft {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 120px;
+    }
+}
+
+@keyframes scaleOut {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
