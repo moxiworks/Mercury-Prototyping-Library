@@ -168,11 +168,11 @@ class Tables extends Component {
                             {
                                 return (
                                     <tr key={'tab'+index} className={this.state.tbd===index ? 'scaleOut':''}>
-                                        <td>{celeb.fname}</td>
-                                        <td>{celeb.lname}</td>
-                                        <td>{celeb.credits}</td>
-                                        <td>{celeb.bdate}</td>
-                                        <td>{celeb.ecolor}</td>
+                                        <td className={this.state.sortBy === 'fname' ? 'activeColumn':''} >{celeb.fname}</td>
+                                        <td className={this.state.sortBy === 'lname' ? 'activeColumn':''}>{celeb.lname}</td>
+                                        <td className={this.state.sortBy === 'credits' ? 'activeColumn':''}>{celeb.credits}</td>
+                                        <td className={this.state.sortBy === 'bdate' ? 'activeColumn':''}>{celeb.bdate}</td>
+                                        <td className={this.state.sortBy === 'ecolor' ? 'activeColumn':''}>{celeb.ecolor}</td>
                                         <td onClick={()=>this.showSubMenu(index)} className='moreBtn'>
                                             <img src={MoreIcon} alt=''/>
                                             {this.state.menuIndex === index ? 
@@ -180,6 +180,7 @@ class Tables extends Component {
                                                 :null
                                             }
                                         </td>
+
                                     </tr>
                                 )
                             })

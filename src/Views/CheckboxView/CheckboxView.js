@@ -7,7 +7,7 @@ class CheckboxView extends Component {
     state = {  }
     render() { 
         return ( 
-            <Checkbox/>
+            <Checkbox label="Checkbox"/>
          );
     }
 }

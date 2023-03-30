@@ -53,16 +53,16 @@
             padding: 20px;
             border-bottom: 1px solid $secondary-light-color;
         }
-
+        .activeColumn{
+            font-weight: 700;
+        }
         tr {
             cursor: pointer;
             transition: all $speed-quick;
         }
 
         tr:hover {
-
             background-color: $secondary-ultra-light-color;
-
         }
 
         .moreBtn:hover:after {
@@ -89,7 +89,7 @@
             .moreMenu {
                 position: absolute;
                 z-index: 20;
-                right: 20px;
+                right: 10px;
                 top: 10px;
                 width: 140px;
                 height: 40px;
