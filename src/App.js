@@ -50,7 +50,7 @@ class App extends Component {
           </NavLink>
 
           <div className='searchForm'>
-            <input onChange={(e)=>this.changed(e)} className='searchBar' placeholder='Search' value={this.state.searchValue}/>
+            <input onChange={(e)=>this.changed(e)} className='searchBar' placeholder='Search...' value={this.state.searchValue}/>
             {this.state.searchValue.length > 1 &&
               <div className='searchClearWrap' onClick={()=>this.clearSearch()}>
               <img src={Cross} alt="Search" className='searchClear'/>
