@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MoreIcon from '../../images/more.svg'
 import MoreWhite from '../../images/more-white.svg'
 import TableArrow from '../../images/table-arrow.svg'
+import Button from '../Button/Button'
 import './Tables.scss'
 class Tables extends Component {
     // constructor(props) {
@@ -51,7 +52,7 @@ class Tables extends Component {
         }
     }
 
-    sortBy=(sortBy,direction)=>{
+    sortBy=(sortBy)=>{
         if(this.state.sortDir==='down' && sortBy===this.state.sortBy){
             this.setState({
                 sortBy: sortBy,
@@ -92,7 +93,23 @@ class Tables extends Component {
                 celebs: tester
             })
             },200)
-        
+    }
+
+    addLine=()=>{
+        let newLine={
+            fname: 'Ian',
+            lname: 'Curtis',
+            credits: 100,
+            bdate: 'July 15th 1956',
+            ecolor: 'Blue'
+        }
+        let newCelebs = [...this.state.celebs,newLine]
+        newCelebs =  newCelebs.sort((a, b) => (a[this.state.sortBy] < b[this.state.sortBy]) ? 1 : -1)
+        this.setState({
+            celebs: newCelebs
+        },()=>{
+            // this.sortBy(this.state.sortBy)
+        })
     }
 
     menu=(index)=>{
@@ -188,7 +205,7 @@ class Tables extends Component {
 
                     </tbody>
                 </table>
-
+            <Button text="Add line" onClick={()=>this.addLine()}/>
 
 
             </div>

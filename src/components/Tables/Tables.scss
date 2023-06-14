@@ -13,7 +13,8 @@
     border-spacing: 0px;
     font-size: 14px;
     border-radius: $radius-small;
-    margin-top: 40px;;
+    margin-top: 40px;
+    margin-bottom: 40px;
 
     thead {
         tr {
@@ -52,6 +53,7 @@
             position: relative;
             padding: 20px;
             border-bottom: 1px solid $secondary-light-color;
+            
         }
         .activeColumn{
             font-weight: 700;
@@ -59,6 +61,7 @@
         tr {
             cursor: pointer;
             transition: all $speed-quick;
+            animation: fadeIn $speed-normal;
         }
 
         tr:hover {
@@ -130,7 +133,7 @@
 }
 
 .scaleOut {
-    animation: scaleOut $speed-normal forwards;
+    animation: scaleOutNew $speed-normal forwards !important;
 }
 
 @keyframes spinRight {
@@ -153,7 +156,7 @@
     }
 }
 
-@keyframes scaleOut {
+@keyframes scaleOutNew {
     0% {
         transform: scale(1);
         opacity: 1;

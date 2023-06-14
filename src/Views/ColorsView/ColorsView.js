@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ColorSwatch from '../../components/ColorSwatch/ColorSwatch';
 import Banner from '../../components/Banner/Banner';
+import { v4 as uuidv4 } from 'uuid';
 import './ColorsView.scss'
 class ColorsView extends Component {
 
@@ -117,10 +118,10 @@ class ColorsView extends Component {
             <div className='colorGroup'>
                 {this.state.colors.map((group,index)=>{
                     return(
-                        <div className='colorSwatchesLayout'>
+                        <div className='colorSwatchesLayout' key={uuidv4()}>
                         {group.map((color,index)=>{
                             return(
-                                <div className='colorInfo' key={color+index}>
+                                <div className='colorInfo' key={uuidv4()}>
                                     <div className='colorName'>{color.name}</div>
                                     <ColorSwatch color={color.color} secondaryColor={color.secondaryColor} border={color.border} callback={(color)=>this.showBanner(color)}/>
                                 </div>

@@ -25,6 +25,9 @@ import ColorsView from './Views/ColorsView/ColorsView';
 import OvalGraph from './Views/OvalGraph/OvalGraph';
 import PropertyCardView from './Views/PropertyCardView/PropertyCardView';
 import TableView from './Views/TableView/TableView';
+import DandD from './Views/DandD/DandD';
+import TestimonialsView from './Views/TestimonialsView/TestimonialsView';
+import AnimationView from './Views/AnimationView/AnimationView';
 
 let pageArray = [
   {
@@ -161,7 +164,22 @@ let pageArray = [
       title: 'Tables',
       link: 'tables',
       comp: TableView
+    },
+    {
+      title: 'Testimonials',
+      link: 'testimonials',
+      comp: TestimonialsView
+    },
+    {
+      title: 'Animations',
+      link: 'animations',
+      comp: AnimationView
     }
+    // ,{
+    //   tilte: 'DandD',
+    //   link: 'dand',
+    //   comp: DandD
+    // }
   ]
 
 
