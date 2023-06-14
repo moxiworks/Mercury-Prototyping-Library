@@ -36,22 +36,22 @@ let pageArray = [
     comp: ColorsView
   },
     {
-      title: 'Text Input',
+      title: 'Input Text',
       link: 'textinput',
       comp: InputView
     },
     {
-      title: 'Search Input',
+      title: 'Input Search',
       link: 'search',
       comp: SearchView
     },
     {
-      title: 'Date Input',
+      title: 'Input Date',
       link: 'date',
       comp: DateView
     },
     {
-      title: 'Upload Input',
+      title: 'Input Upload',
       link: 'uploadinput',
       comp: UploadInputView
     },
@@ -61,12 +61,12 @@ let pageArray = [
       comp: ImageUploadView
     },
     {
-      title: 'Textarea',
+      title: 'Input Textarea',
       link: 'textarea',
       comp: TextFieldView
     },
     {
-      title: 'Select',
+      title: 'Input Select',
       link: 'select',
       comp: SelectView
     },
@@ -76,22 +76,22 @@ let pageArray = [
       comp: ButtonView
     },
     {
-      title: 'Toggle',
+      title: 'Input Toggle',
       link: 'toggle',
       comp: ToggleView
     },
     {
-      title: 'Checkbox',
+      title: 'Input Checkbox',
       link: 'checkbox',
       comp: CheckboxView
     },
     {
-      title: 'Radio',
+      title: 'Input Radio',
       link: 'radio',
       comp: RadioView
     },
     {
-      title: 'Range',
+      title: 'Input Range',
       link: 'range',
       comp: RangeSelectView
     },
@@ -121,13 +121,13 @@ let pageArray = [
       comp: LoaderView
     },
     {
-      title: 'Bar Graph',
-      link: 'graphs',
+      title: 'Graph Bar',
+      link: 'graphbar',
       comp: GraphView
     },
     {
-      title: 'Oval Graph',
-      link: 'ovalgraph',
+      title: 'Graph Oval',
+      link: 'graphoval',
       comp: OvalGraph
     },
     {
