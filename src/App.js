@@ -57,7 +57,7 @@ class App extends Component {
               </div>
             }
           </div>
-
+          <div className='viewList'>
           {
             this.state.pageArray.map((item,index)=>{
                   return(
@@ -67,6 +67,7 @@ class App extends Component {
                   )
             })
           }
+          </div>
         </nav>
 
         <div className='mainViews'>
