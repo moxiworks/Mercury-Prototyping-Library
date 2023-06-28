@@ -3,6 +3,7 @@ import MoreIcon from '../../images/more.svg'
 import MoreWhite from '../../images/more-white.svg'
 import TableArrow from '../../images/table-arrow.svg'
 import Button from '../Button/Button'
+import Checkbox from '../Checkbox/Checkbox'
 import './Tables.scss'
 class Tables extends Component {
     // constructor(props) {
@@ -13,27 +14,33 @@ class Tables extends Component {
         tbd: -1,
         sortBy: 'fname',
         sortDir: 'down',
+        bulkEdit:false,
+        mainCheck:false,
+        inbetweenCheck:false,
         celebs: [
             {
                 fname: 'Robert',
                 lname: 'Smith',
                 credits: 350,
                 bdate: 'April 21st 1959',
-                ecolor: 'Blue'
+                ecolor: 'Blue',
+                checked:false
             },
             {
                 fname: 'Steven',
                 lname: 'Morrissey',
                 credits: 180,
                 bdate: 'May 22nd 1959',
-                ecolor: 'Blue'
+                ecolor: 'Blue',
+                checked:false
             },
             {
                 fname: 'Siouxsie',
                 lname: 'Sioux',
                 credits: 90,
                 bdate: 'May 27nd 1957',
-                ecolor: 'Brown'
+                ecolor: 'Brown',
+                checked:false
             }
         ]
     }
@@ -101,7 +108,8 @@ class Tables extends Component {
             lname: 'Curtis',
             credits: 100,
             bdate: 'July 15th 1956',
-            ecolor: 'Blue'
+            ecolor: 'Blue',
+            checked:false
         }
         let newCelebs = [...this.state.celebs,newLine]
         newCelebs =  newCelebs.sort((a, b) => (a[this.state.sortBy] < b[this.state.sortBy]) ? 1 : -1)
@@ -123,6 +131,57 @@ class Tables extends Component {
             </div>
         )
     }
+    bulkSelect=()=>{
+        this.setState({
+            mainCheck: !this.state.mainCheck,
+            bulkEdit: !this.state.bulkEdit,
+            inbetweenCheck:false
+        })
+        if(!this.state.mainCheck){
+            this.state.celebs.forEach(celeb=>{
+                celeb.checked=true
+            })
+        }else{
+            this.state.celebs.forEach(celeb=>{
+                celeb.checked=false
+            })
+
+        }
+    }
+
+    individualCheck=(index)=>{
+        let updateOne = this.state.celebs
+        if(updateOne[index].checked ){
+            updateOne[index].checked = false
+        }else{
+            updateOne[index].checked = true
+        }
+        let checker = updateOne.filter(celeb=>celeb.checked===false)
+        if((checker.length>0 && checker.length<updateOne.length) && this.state.mainCheck){
+            if(checker.length<updateOne.length){
+                this.setState({
+                    inbetweenCheck:true
+                })
+            }
+            
+        }else if(checker.length===updateOne.length  && this.state.mainCheck){
+            this.setState({
+                inbetweenCheck:false,
+                mainCheck:false
+            })
+        }
+        else{
+            this.setState({
+                inbetweenCheck:false
+            })
+        }
+
+        this.setState({
+            celebs: updateOne
+        })
+    
+    }
+
     render() {
         return (
             <div className='tableWrapper'>
@@ -131,10 +190,23 @@ class Tables extends Component {
                 <small className='h3'>An overview of 80’s & 90's alternative musicians</small>
                 </div>
 
-                <table className='merTable'>
+                <div className='bulkTools'>
+                    <Checkbox label="Select all" onClick={()=>this.bulkSelect()} checked={this.state.mainCheck} inbetween={this.state.inbetweenCheck}/>
+                    {this.state.mainCheck &&
+                        <div className='rhs'>
+                            delete
+                        </div>
+                    }
+                </div>
 
+                <table className='merTable'>
+                    
                     <thead>
                         <tr>
+                        <th >
+                             
+                        </th>
+
                             <th onClick={()=>this.sortBy('fname')}>
                                 First Name
                                 {this.state.sortBy==='fname' ?
@@ -185,6 +257,7 @@ class Tables extends Component {
                             {
                                 return (
                                     <tr key={'tab'+index} className={this.state.tbd===index ? 'scaleOut':''}>
+                                        <td><Checkbox checked={celeb.checked} onClick={()=>this.individualCheck(index)}/> </td>
                                         <td className={this.state.sortBy === 'fname' ? 'activeColumn':''} >{celeb.fname}</td>
                                         <td className={this.state.sortBy === 'lname' ? 'activeColumn':''}>{celeb.lname}</td>
                                         <td className={this.state.sortBy === 'credits' ? 'activeColumn':''}>{celeb.credits}</td>

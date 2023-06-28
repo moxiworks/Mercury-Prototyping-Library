@@ -45,4 +45,34 @@
         border-radius: $radius-small;
         animation: scaleOutCheckbox $speed-normal forwards;
     }
+    .checkBeteen{
+        position: relative;
+        background-color: $primary-color;
+        border: 1px solid $primary-color;
+        background-color: $secondary-color !important;
+    }
+    .checkBeteen:after{
+        position: absolute;
+        content: '';
+        left: 6px;
+        top: 7px;
+        width: 8px;
+        height: 8px;
+        opacity: 1;
+        transform: scale(0);
+        background-image: url('../../images/dash.svg');
+        background-position: center 2px;
+        background-repeat: no-repeat;
+        animation: rotateDash $speed-normal $ease-bounce forwards;
+
+    }
+}
+
+@keyframes rotateDash {
+    0%{
+        transform: rotate(-90deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
 }

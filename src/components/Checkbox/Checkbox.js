@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 import './Checkbox.scss'
-class Checkbox extends Component {
-    // constructor(props) {
-    //     super(props);
-    // }
-    state = { 
-        checked: false
-     }
 
-    toggleCheck=()=>{
-        this.setState(({ checked }) => ({ checked: !checked }));
+export default class Checkbox extends Component {
+    constructor(props, context) {
+        super(props, context);
+        this.state = {
+            // checked: this.props.checked
+        }
+        
     }
+
+
+
     render() { 
         return (  
-            <div className='checkboxWrap' onClick={()=>this.toggleCheck()}>
-                <div className={this.state.checked ? 'checkboxMain checkboxChecked' : 'checkboxMain'}></div>
+            <div className='checkboxWrap' onClick={()=>this.props.onClick()}>
+                <div className={this.props.inbetween ? "checkboxMain checkBeteen" : this.props.checked ? 'checkboxMain checkboxChecked' : 'checkboxMain'}></div>
                 {this.props.label ?
                 <label htmlFor="option2">{this.props.label}</label>
                 : null}
@@ -23,4 +24,3 @@ class Checkbox extends Component {
     }
 }
  
-export default Checkbox;

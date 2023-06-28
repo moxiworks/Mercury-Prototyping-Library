@@ -4,7 +4,14 @@
     width: 100%;
     max-width: 800px;
 }
-
+.bulkTools{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    .rhs{
+        animation: fadeIn $speed-normal;
+    }
+}
 .merTable {
     width: 100%;
     color: $secondary-color;
@@ -13,7 +20,7 @@
     border-spacing: 0px;
     font-size: 14px;
     border-radius: $radius-small;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 40px;
 
     thead {

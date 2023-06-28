@@ -4,10 +4,17 @@ class CheckboxView extends Component {
     constructor(props) {
         super(props);
     }
-    state = {  }
+    state = {
+        checked:false
+    }
+
+    checkState=()=>{
+        console.log("cheked");
+        this.setState(({ checked }) => ({ checked: !checked }));
+    }
     render() { 
         return ( 
-            <Checkbox label="Checkbox"/>
+            <Checkbox label="Checkbox" checked={this.state.checked} onClick={()=>this.checkState()}/>
          );
     }
 }
