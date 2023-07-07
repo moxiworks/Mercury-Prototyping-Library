@@ -8,6 +8,7 @@ class Dialogs extends Component {
         super(props);
         this.wrapperRef = React.createRef();
         this.handleClickOutside = this.handleClickOutside.bind(this);
+        this.onKeyPressed = this.onKeyPressed.bind(this);
     }
     state = { 
        delDisabled: true,
@@ -15,6 +16,7 @@ class Dialogs extends Component {
      }
      componentDidMount() {
         document.addEventListener("mousedown", this.handleClickOutside);
+        document.addEventListener("keydown", this.onKeyPressed);
     }
 
     handleClickOutside(event) {
@@ -25,6 +27,23 @@ class Dialogs extends Component {
                 this.props.onClick()
             }
           
+        }
+      }
+
+      onKeyPressed(event){
+        console.log(event);
+        if(event.code==='Enter'){
+            if(this.props.type=== 'delete'){
+                if(!this.state.showOk){
+                    this.props.onClick()
+                }
+               
+            }else{
+                this.props.onCancel()
+            }
+        }
+        if(event.code==='Escape'){
+            this.props.onCancel()
         }
       }
 
@@ -75,7 +94,7 @@ class Dialogs extends Component {
                              <div className='modalButtons'>
                             <Button text="Cancel" onClick={()=>this.props.onCancel()} type="text"/>
                             <Button text="Ok" onClick={()=>this.props.onClick()} type="" disabled={this.state.delDisabled}/>
-                        </div>
+                            </div>
                          </div>
                         : <div className='alertText'>
                         <div className='alertHeading'>Are you sure you want to do this?</div>
