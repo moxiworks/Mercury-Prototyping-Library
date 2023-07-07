@@ -222,6 +222,12 @@ class Tables extends Component {
                 bulkSelectText: "Select All"
             })
         }
+        if(checked.length>0 && checked.length<updateOne.length){
+            this.setState({
+                mainCheck:true,
+                inbetweenCheck: true,
+            })
+        }
 
         this.setState({
             celebs: updateOne

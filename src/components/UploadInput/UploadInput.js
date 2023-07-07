@@ -74,8 +74,9 @@ export default class UploadInput extends Component {
                 : "uploadWrap"
             }
             >
-                <Label text={this.props.label} subText={this.state.error ? "This field is required":""}/>
+                <Label text={this.props.label} for="uploadInput" subText={this.state.error ? "This field is required":""}/>
                 <input 
+                id="uploadInput"
                 className='uploadInput'
                 ref={this.inputRef}  
                 placeholder={this.props.placeholder} 
