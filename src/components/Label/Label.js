@@ -16,8 +16,10 @@ export default class Label extends Component {
     render() {
         return (
             <div className='label'>
-                <span>{this.props.text}</span>
-                <span className='subText'>{this.props.subText}</span>
+                <label htmlFor={this.props.for}>{this.props.text} 
+                    <span className='subText'>{this.props.subText}</span>
+                </label>
+                
             </div>
         )
     }

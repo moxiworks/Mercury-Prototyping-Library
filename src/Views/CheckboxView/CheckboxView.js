@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Checkbox from '../../components/Checkbox/Checkbox';
 class CheckboxView extends Component {
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
     state = {
         checked:false
     }

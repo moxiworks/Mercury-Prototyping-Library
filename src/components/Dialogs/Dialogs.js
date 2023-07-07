@@ -19,7 +19,12 @@ class Dialogs extends Component {
 
     handleClickOutside(event) {
         if (this.wrapperRef && this.wrapperRef.current && ! this.wrapperRef.current.contains(event.target)) {
-          this.props.onClick()
+            if(this.props.onCancel){
+                this.props.onCancel()
+            }else{
+                this.props.onClick()
+            }
+          
         }
       }
 
@@ -66,11 +71,11 @@ class Dialogs extends Component {
                          ?
                          <div className='alertText'>
                              <div className='alertHeading'>Type 'DELETE' to delete</div>
-                             <Input label="Name" placeholder="Enter your name" focus={true} onChange={(val)=>this.test(val)} error={true}/>
+                             <Input label="Confirm" placeholder="Type 'DELETE'" focus={true} onChange={(val)=>this.test(val)} error={false}/>
                              <div className='modalButtons'>
-                            <Button text="Cancel" onClick={()=>this.props.onClick()} type="text"/>
-                            <Button text="Ok" onClick={()=>this.props.onClick()} type="delete" disabled={this.state.delDisabled}/>
-                    </div>
+                            <Button text="Cancel" onClick={()=>this.props.onCancel()} type="text"/>
+                            <Button text="Ok" onClick={()=>this.props.onClick()} type="" disabled={this.state.delDisabled}/>
+                        </div>
                          </div>
                         : <div className='alertText'>
                         <div className='alertHeading'>Are you sure you want to do this?</div>

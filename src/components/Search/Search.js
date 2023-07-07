@@ -88,8 +88,9 @@ class Search extends Component {
                 : "searchWrap"
             }
             >
-                <Label text="Search" subText={this.state.error ? "This field is required":""}/>
+                <Label text="Search" for="searchInput" subText={this.state.error ? "This field is required":""}/>
                 <input 
+                id="searchInput"
                 className='searchInput'
                 ref={this.inputRef}  
                 placeholder="Search for things..." 

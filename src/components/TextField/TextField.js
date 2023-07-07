@@ -52,8 +52,9 @@ export default class TextField extends Component {
                 : "textWrap"
             }
             >
-                <Label text={this.props.label} subText={this.state.error ? "This field is required":""}/>
+                <Label text={this.props.label}  for="textArea" subText={this.state.error ? "This field is required":""}/>
                 <textarea
+                id="textArea"
                 ref={this.inputRef}  
                 placeholder={this.props.placeholder} value={this.state.text} 
                 onFocus={()=>this.focusInput()}

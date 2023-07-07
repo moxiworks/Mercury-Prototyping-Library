@@ -74,8 +74,9 @@ export default class Input extends Component {
             }
             onClick={()=>this.focusInput()}
             >
-                <Label text={this.props.label} />
+                <Label text={this.props.label} for="selectInput"/>
                 <input 
+                id="selectInput"
                 ref={this.inputRef}  
                 placeholder={this.props.placeholder} 
                 value={this.state.text}

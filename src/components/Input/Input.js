@@ -62,9 +62,10 @@ export default class Input extends Component {
                 : "inputWrap"
             }
             >
-                <Label text={this.props.label} subText={this.state.error ? "This field is required":""}/>
+                <Label text={this.props.label} for="textInput" subText={this.state.error ? "This field is required":""}/>
                 <input 
-                    ref={this.inputRef}  
+                    ref={this.inputRef} 
+                    id="textInput"
                     placeholder={this.props.placeholder} value={this.state.text} 
                     onFocus={()=>this.focusInput()}
                     onBlur={()=>this.focusInput()} 

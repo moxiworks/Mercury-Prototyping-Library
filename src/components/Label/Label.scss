@@ -2,15 +2,19 @@
 
 .label{
     text-transform: uppercase;
-    font-size: 12px;
     font-weight: 700;
     text-decoration: none;
     color: $secondary-color;
    cursor: default;
-}
-.subText{
-    font-weight: normal;
-    text-transform: none;
-    margin-left: 5px;
-    animation: scaleIn 2s forwards;
+   label{
+    font-size: 12px !important;
+    .subText{
+        font-weight: normal;
+        text-transform: none;
+        margin-left: 5px;
+        animation: scaleIn 2$speed-normal forwards;
+        color: $error-color;
+    }
+    
+   }
 }

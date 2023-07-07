@@ -66,19 +66,19 @@
     animation: slideIn $speed-quick $ease-bounce forwards;
 }
 .inputWrapFocused:after{
-    position: absolute;
-    content: "";
-    width: 1px;
-    height: calc(100% + 2px);
-    margin-left: -2px;
-    background-color: $primary-color;
+    // position: absolute;
+    // content: "";
+    // width: 1px;
+    // height: calc(100% + 2px);
+    // margin-left: -2px;
+    // background-color: $primary-color;
 }
 .inputError{
     input{
         border: 1px solid $error-color !important;
         outline: none;
     }
-    .label{
+    label{
         color: $error-color;
     }
 }

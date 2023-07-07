@@ -18,6 +18,7 @@ class DialogView extends Component {
         })
     }
     closeModal=()=>{
+        console.log("close");
         this.setState({
             showModal: false
         })
@@ -28,9 +29,9 @@ class DialogView extends Component {
             <Button text="Alert" onClick={()=>this.openModal('alert')}/>
             <Button text="Confirm" onClick={()=>this.openModal('confirm')}/>
             <Button text="Prompt" onClick={()=>this.openModal('prompt')}/>
-            <Button text="Delete" onClick={()=>this.openModal('delete')}/>
+            <Button text="Delete" onClick={()=>this.openModal('delete')} />
             {this.state.showModal ? 
-            <Dialog onClick={()=>this.closeModal()} type={this.state.modalType}/>
+            <Dialog onClick={()=>this.closeModal()} onCancel={()=>this.closeModal()} type={this.state.modalType}/>
             : null}
         </div>
          
