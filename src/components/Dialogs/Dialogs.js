@@ -17,6 +17,7 @@ class Dialogs extends Component {
      componentDidMount() {
         document.addEventListener("mousedown", this.handleClickOutside);
         document.addEventListener("keydown", this.onKeyPressed);
+       
     }
 
     handleClickOutside(event) {
@@ -31,19 +32,43 @@ class Dialogs extends Component {
       }
 
       onKeyPressed(event){
-        console.log(event);
         if(event.code==='Enter'){
-            if(this.props.type=== 'delete'){
-                if(!this.state.showOk){
-                    this.props.onClick()
+            event.preventDefault()
+            if(this.props.type === 'delete'){
+                if(!this.state.delDisabled){
+                    this.setState({
+                        delDisabled: true
+                    },()=>{
+                        this.props.onClick()
+                    })
+                    
                 }
-               
-            }else{
-                this.props.onCancel()
+            }else if(this.props.type === 'prompt'){
+                if(!this.state.showOk){
+                    this.setState({
+                        showOk: true
+                    },()=>{
+                        this.props.onCancel()
+                    })
+                }
             }
+            else{
+                this.setState({
+                    delDisabled: true
+                },()=>{
+                    this.props.onCancel()
+                })
+            }
+            
         }
+       
+            
         if(event.code==='Escape'){
-            this.props.onCancel()
+            this.setState({
+                delDisabled: true
+            },()=>{
+                this.props.onCancel()
+            })
         }
       }
 
@@ -51,6 +76,10 @@ class Dialogs extends Component {
         if(val==="DELETE"){
             this.setState({
                 delDisabled: false
+            })
+        }else{
+            this.setState({
+                delDisabled: true
             })
         }
         if(val.length>0){
@@ -105,13 +134,6 @@ class Dialogs extends Component {
                             </div>
                         </div>
                     }
-
-                    {/* <div className='modalButtons'>
-                        <Button text="Cancel" onClick={()=>this.props.onClick()} type="text"/>
-                            <Button text="Ok" onClick={()=>this.props.onClick()} type="delete" disabled={this.state.delDisabled}/>
-                            <Button text="Ok" onClick={()=>this.props.onClick()} />
-                    </div> */}
-
                 </div>
                 
             </div>

@@ -10,7 +10,7 @@ class DialogView extends Component {
         showModal: false,
         modalType:''
      }
-
+     
     openModal=(type)=>{
         this.setState({
             showModal: true,
