@@ -1,0 +1,124 @@
+@import '../../css/global.scss';
+
+.impToast{
+    position: absolute;
+    top: 0px;
+    left: -15px;
+    right: -5px;
+    height: 40px;
+    padding-top: 20px;
+    transform: translateY(-20px);
+    background-color: $purple-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: white;
+    font-size: 14px;
+    animation: slideDown $speed-normal $ease-bounce;
+    box-shadow: $shadow;
+    .impNavBtn{
+        display: flex;
+        align-items: center;
+        padding: 0 15px 0 10px;
+        height: 30px;
+        border-radius: $radius-small;
+        background-color: $purple-dark-color;
+        gap: 10px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all $speed-normal;
+        color: white;
+        border: none;
+    }
+    .impNavBtn:hover{
+        filter: brightness(1.35);
+    }
+}
+@keyframes slideDown {
+    0%{
+        transform: translateY(-40px);
+    }
+    100%{
+        transform: translateY(-20px);
+    }
+    
+}
+.impModalBackground{
+    position: absolute;
+    width: calc(100% + 25px);
+    height: 100%;
+    top:0;
+    left: -20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,32,64,0.6);
+    animation: fadeIn $speed-normal;
+}
+.impModal{
+    position: relative;
+    width: 720px;
+    height: 620px;
+    padding: 40px;
+    margin: 0 20px;
+    border: 1px solid $secondary-light-color;
+    border-radius: $radius-small;
+    box-shadow: $shadow;
+    background-color: white;
+    animation: slideUpModal $speed-normal $ease-bounce  forwards;
+    
+    .inputWrap{
+        min-width: 100%;
+    }
+    .titleArea{
+        margin-bottom: 20px;
+        display: grid !important;
+        grid-template-columns: 60px 1fr 130px;
+        .impIcon{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+        }
+        .rhs{
+            display: flex;
+           justify-content: flex-end;
+           align-items: flex-end;
+        }
+    }
+    .personContent{
+        height: 380px;
+        margin-top: 20px;
+        overflow-y: auto;
+    }
+    .buttonArea{
+        position: absolute;
+        bottom: 40px;
+        width: calc(100% - 80px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .lhs{
+            display: flex;
+            align-items: center;
+            a{
+                font-size: 14px;
+                margin-left: 10px;
+                color: $primary-color;
+            }
+            a:hover{
+                color: $purple-color;
+            }
+        }
+        .btns{
+            right: 40px;
+            display: flex;
+            button{
+                margin-bottom: 0;
+            }
+        }
+    }
+
+
+}

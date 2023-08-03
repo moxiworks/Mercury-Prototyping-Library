@@ -1,7 +1,7 @@
 import './App.scss';
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Routes, NavLink } from "react-router-dom";
-
+import { Star} from "@phosphor-icons/react";
 import Logo from './images/logo.svg'
 import Cross from './images/cross.svg'
 
@@ -63,6 +63,9 @@ class App extends Component {
                   return(
                   <NavLink to={item.link} className={({ isActive }) => isActive ? 'selected' : 'link'} key={'Nav'+index}>
                     {item.title}
+                    {item.new &&
+                      <Star size={14} color="#6BC4FF" weight="fill" />
+                    }
                   </NavLink>
                   )
             })

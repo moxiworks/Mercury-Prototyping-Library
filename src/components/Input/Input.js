@@ -45,8 +45,9 @@ export default class Input extends Component {
         },()=>{
             this.inputRef.current.focus()
         })
-        
-       
+        if(this.props.onClear){
+            this.props.onClear()
+        }
     }
    
     render() {
@@ -75,7 +76,7 @@ export default class Input extends Component {
                     max={this.props.max?this.props.max:800000000}
                 />
                 {this.state.showCross ? 
-                <div className="clearButton" onClick={()=>this.clearText()}><img src={Cross}/></div>
+                <div className="clearButton" onClick={()=>this.clearText()}><img src={Cross} alt=""/></div>
                 : null}
             </div>
         )

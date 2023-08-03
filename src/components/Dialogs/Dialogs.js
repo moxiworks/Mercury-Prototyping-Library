@@ -61,7 +61,6 @@ class Dialogs extends Component {
             }
             
         }
-       
             
         if(event.code==='Escape'){
             this.setState({

@@ -48,7 +48,7 @@ export default class TextField extends Component {
                 : this.state.focused ? 
                 "textWrap textWrapFocused" 
                 : this.state.error ?
-                 "textWrap inputError"
+                 "textWrap inputError textError" 
                 : "textWrap"
             }
             >

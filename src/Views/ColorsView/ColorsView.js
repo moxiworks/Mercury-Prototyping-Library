@@ -50,6 +50,10 @@ class ColorsView extends Component {
                     color: '#F3F5F6',
                     secondaryColor: '#597897',
                     border: '#597897'
+                },
+                {
+                    name: 'Secondary: Medium',
+                    color: '#9BB2C9'
                 }
             ],
             [

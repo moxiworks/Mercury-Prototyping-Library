@@ -32,7 +32,7 @@ input[type="radio"] {
     border-radius: 50%;
     margin-right: 10px;
   }
-
+ 
   input[type="radio"]:checked {
     position: relative;
     appearance: none;
@@ -70,6 +70,16 @@ input[type="radio"] {
     border-radius: 50%;
     background-color: transparent;
     animation: scaleOutRadio $speed-normal $ease-bounce;
+  }
+  input[type="radio"]:disabled {
+    border: 1px solid $secondary-light-color;
+  }
+  input[type="radio"]:disabled::after {
+    background-color: transparent;
+  }
+  input[type="radio"]:disabled::before {
+    background-color: transparent;
+    border: none;
   }
 
  

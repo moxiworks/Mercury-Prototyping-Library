@@ -18,6 +18,13 @@
     cursor: pointer;
     transition: all $speed-normal;
     overflow: hidden;
+    font-family: Roboto;
+    .btinIcon{
+        margin-right: 10px;
+        margin-left: -5px;
+        width: 16px;
+        height: 16px;
+    }
 }
 .button:disabled{
     background-color: $secondary-light-color;

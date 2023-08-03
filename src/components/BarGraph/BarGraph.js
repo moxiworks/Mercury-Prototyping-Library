@@ -93,7 +93,8 @@ class BarGraph extends Component {
         const myWidth = this.toolTip.current.getBoundingClientRect().width-20
         const myHeight= this.toolTip.current.getBoundingClientRect().height+15
         this.toolTip.current.style.opacity= 1
-        this.toolTip.current.style.left= (e.target.getBoundingClientRect().left - 5)+'px'
+        let offset = 260
+        this.toolTip.current.style.left= (e.target.getBoundingClientRect().left - offset)+'px'
         this.toolTip.current.style.top= (e.target.getBoundingClientRect().top-myHeight) + 'px'
         this.setState({
             tooltipText: text
