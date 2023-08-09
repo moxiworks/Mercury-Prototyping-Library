@@ -77,11 +77,11 @@
     font-size: 14px;
     font-weight: 700;
     text-transform: uppercase;
-    color: $light-blue;
+    color: $ultra-light-blue;
     height: 100%;
     width: auto;
     cursor: pointer;
-    transition: all $speed-normal;
+    transition: all $speed-quick;
 }
 .mainMenuItem:hover{
     color: white;
@@ -90,7 +90,6 @@
     position: relative;
     color: white;
     height: 100%;
-   
 }
 
 .mainMenuActiveBar{
