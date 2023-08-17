@@ -7,6 +7,7 @@
     padding: 0 20px;
     border-radius: 3px;
     border: none;
+    outline: 1px double transparent;
     min-width: 150px;
     height: 40px;
     background-color: $primary-color;
@@ -30,16 +31,42 @@
     background-color: $secondary-light-color;
     color: $secondary-color;
 }
+
+.buttonMain:focus,.buttonActive:focus,.buttonSmall:focus,.buttonText:focus{
+    outline-offset: 2px;
+    outline: 2px solid $primary-color;
+    transition: none;
+}
+.buttonSmall:focus{
+    outline: 1px solid $purple-color;
+}
+.buttonText:focus{
+    outline: 1px solid $secondary-color;
+}
+
 .buttonSmall{
     height: 30px;
     min-width: 100px;
     background-color: $purple-color;
 }
+
+
+.buttonMain:focus:not(:focus-visible),
+.buttonActive:focus:not(:focus-visible),
+.buttonSmall:focus:not(:focus-visible) ,
+.buttonText:focus:not(:focus-visible) 
+{
+    outline: none;
+}
 .buttonText{
 background: none;
 color: $dark-color;
 font-weight: 700;
+// min-width: 130px;
+margin-right: 20px;
 }
+
+
 .buttonText:hover{
     color: $primary-color;
     filter: none !important;
@@ -54,18 +81,19 @@ font-weight: 700;
 .buttonDelete{
     background-color: $error-color;
 }
-// .buttonSearch:after{
-//     position: absolute;
-//     content: '';
-//     left: 5px;
-//     width: 16px;
-//     height: 16px;
-//     background-image: url('../../images/small-loader.svg');
-//     background-repeat: no-repeat;
-//     background-position: center;
-//     background-size: 10px;
-//     animation: spinner $speed-quick linear infinite;
-// }
+
+.buttonSearch:after{
+    position: absolute;
+    content: '';
+    left: 5px;
+    width: 16px;
+    height: 16px;
+    background-image: url('../../images/small-loader.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10px;
+    animation: spinner $speed-quick linear infinite;
+}
 .button:hover:enabled{
     filter: brightness(1.4);
 }
@@ -80,6 +108,7 @@ font-weight: 700;
     background-color: white;
     animation: scaleOut $speed-quick forwards;
     filter: brightness(0.75);
+    outline: 2px solid $primary-color;
 }
 
 .buttonSaving, .buttonSaving:hover{

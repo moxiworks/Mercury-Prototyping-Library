@@ -51,7 +51,7 @@ export default class Button extends Component {
             ?
             <button onClick={()=>this.clicked()} className={this.state.active ? 'button buttonActive buttonSaving' : 'button buttonSaving'} disabled={this.props.disabled}><img src={SearchLoader} alt=""/>{this.props.text}</button>
             :
-            <button onClick={()=>this.clicked()} className={this.state.active ? 'button buttonActive' : 'button'} disabled={this.props.disabled}>
+            <button onClick={()=>this.clicked()} className={this.state.active ? 'button buttonActive' : 'button buttonMain'} disabled={this.props.disabled}>
                 {this.props.icon &&
                     <img src={this.props.icon} alt="" className='btinIcon'/>
                 }

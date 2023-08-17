@@ -28,7 +28,7 @@ import TableView from './Views/TableView/TableView';
 import TestimonialsView from './Views/TestimonialsView/TestimonialsView';
 import AnimationView from './Views/AnimationView/AnimationView';
 import ImpersonView from './Views/ImpersonView/ImpersonView';
-
+import TimelineView from './Views/TimelineView/TimelineView';
 let pageArray = [
   {
     title: 'Colors',
@@ -178,8 +178,13 @@ let pageArray = [
     ,{
       title: 'Impersonate',
       link: 'imperson',
-      new: true,
+      new: false,
       comp: ImpersonView
+    },{
+      title: 'Timeline',
+      link: 'timeline',
+      new: true,
+      comp: TimelineView
     }
   ]
 

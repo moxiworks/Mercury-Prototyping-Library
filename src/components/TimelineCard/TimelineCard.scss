@@ -1,0 +1,112 @@
+@import '../../css/global.scss';
+
+.timelineCard{
+    width: 304px;
+    height: 70px;
+    border-radius: $radius-small;
+    display: grid;
+    grid-template-columns: 24px 10px 1fr;
+    cursor: pointer;
+    transition: all $speed-normal $ease-bounce;
+}
+.timelineCardStatus{
+    height: 100px;
+}
+.animateIn{
+    animation: newCard $speed-slow $ease-bounce;
+}
+.moveOne{
+    animation: moveDown $speed-normal $ease-bounce;
+}
+@keyframes moveDown {
+    0%{
+        transform: translateY(-60px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+@keyframes newCard {
+    0%{
+        transform: translateY(-80px);
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    
+}
+
+.timelineCard:hover{
+    height: 90px;
+    .timelineText{
+        white-space: pre-wrap;
+    }
+}
+.timelineCardStatus:hover{
+    height: 120px;
+    .timelineText{
+        white-space: pre-wrap;
+    }
+}
+.timelineHook{
+    display: grid;
+    grid-template-columns:9px 1fr;
+    align-items: center;
+    .timelineBall{
+        background-color: #6BC4FF;
+        height: 9px;
+        border-radius: 50%;
+    }
+    .timelineLine{
+        height: 1px;
+        background-color: #6BC4FF;
+    }
+}
+.timelineIndicator{
+    background-color: #6BC4FF;
+    border-radius: $radius-small 0 0 $radius-small;
+}
+.timelineInfo{
+    position: relative;
+    background-color: $primary-darker;
+    border-radius: 0 $radius-small $radius-small 0;
+    padding-left: 15px;
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: flex-start;
+    transition: all $speed-normal;
+
+    .timelineDate{
+        font-size: 12px;
+        font-weight: 700;
+        color: $secondary-light-color;
+        text-transform: uppercase;
+    }
+    .timelineText{
+        width: 240px;
+        padding-right: 10px;
+        font-size: 13px;
+        color: white;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transition: all $speed-normal $ease-bounce;
+        line-height: 20px;
+    }
+    .timelineStatus{
+        position: absolute;
+        bottom: 10px;
+        font-size: 12px;
+        font-weight: 700;
+        color: white;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+}
+

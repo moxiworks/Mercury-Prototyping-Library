@@ -1,0 +1,55 @@
+@import '../../css/global.scss';
+
+.timeline{
+    position: relative;
+    padding: 20px;
+    width: 300px;
+    height: 614px;
+    background-color: $secondary-ultra-light-color;
+    border-radius: $radius-small;
+    margin-bottom: 20px;
+    overflow-y: auto;
+}
+.timeline::-webkit-scrollbar {
+    width: 0;
+    background-color: transparent;
+  }
+  
+  /* Optional: Apply a custom style to the scrollbar track */
+  .timeline::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
+  /* Optional: Apply a custom style to the scrollbar thumb */
+  .timeline::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+.timeLineDivider{
+    width: 1px;
+    height: 100%;
+    background-color: $primary-darker;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.timelineDot{
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: $primary-darker;
+    margin-left: -4px;
+}
+.timelineCardWrapper{
+    position: absolute;
+    top: 40px;
+    left: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: all 1s;
+    // animation: slowSlideUp $speed-normal $ease-bounce;
+}
+.toggleWrap{
+  margin-bottom: 20px;
+}
+
