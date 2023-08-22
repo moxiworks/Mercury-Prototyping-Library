@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import MoreIcon from '../../images/more.svg'
 import MoreWhite from '../../images/more-white.svg'
 import TableArrow from '../../images/table-arrow.svg'
-import Trash from '../../images/trash.svg'
+// import Trash from '../../images/trash.svg'
 import DonwloadIcon from '../../images/download.svg'
 import Button from '../Button/Button'
 import Checkbox from '../Checkbox/Checkbox'
 import Dialog from '../../components/Dialogs/Dialogs';
+import { Trash, DownloadSimple } from '@phosphor-icons/react';
 
 import './Tables.scss'
 class Tables extends Component {
@@ -267,6 +268,8 @@ class Tables extends Component {
         link.click();
     }
 
+   
+
     render() {
         return (
             <div className='tableWrapper'>
@@ -285,8 +288,17 @@ class Tables extends Component {
                     }
                     {this.state.mainCheck &&
                         <div className='rhs'>
-                            <button onClick={() => this.showModal()}><img src={Trash} alt="" />delete</button>
-                            <button onClick={() => this.download()}><img src={DonwloadIcon} alt="" />download</button>
+                            <button onClick={() => this.showModal()} 
+                            // onMouseEnter={()=>this.delHover()} 
+                            // onMouseLeave={()=>this.delLeave()}
+                            >
+                            <Trash size={18} color="#455E78" weight="bold" />
+                                delete</button>
+                            <button onClick={() => this.download()} onMouseEnter={()=>this.downHover()} onMouseLeave={()=>this.downLeave()}>
+                                {/* <img src={DonwloadIcon} alt="" /> */}
+                                <DownloadSimple size={18} color="#455E78" weight="bold" />
+                                download
+                                </button>
                         </div>
                     }
                 </div>

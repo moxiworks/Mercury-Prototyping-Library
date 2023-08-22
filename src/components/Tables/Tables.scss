@@ -18,21 +18,31 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            gap: 10px;
             font-size: 12px;
             font-weight: 700;
             text-transform: uppercase;
             border: none;
             background-color: transparent;
-            color: $secondary-color;
+            color: $primary-color;
             cursor: pointer;
             margin-left: 10px;
+            transition: all $speed-quick;
             img{
                 margin-right: 10px;
             }
+            svg{
+                transition: all $speed-quick;
+            }
+            
         }
         button:hover{
-            color: $primary-color;
+            color: $purple-color;
+            svg{
+                fill: $purple-light-color;
+            }
         }
+       
     }
 }
 .merTable {
