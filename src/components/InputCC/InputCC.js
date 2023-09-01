@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Label from '../Label/Label';
 import Cross  from '../../images/cross.svg'
-import './Input.scss'
-export default class Input extends Component {
+import './InputCC.scss'
+export default class InputCC extends Component {
 
     constructor(props, context) {
         super(props, context);
@@ -10,6 +10,7 @@ export default class Input extends Component {
             focused: false,
             error: this.props.error,
             showCross:false,
+            charCount: 0,
             text: this.props.text ? this.props.text : ''
         }
         this.inputRef = React.createRef();
@@ -28,9 +29,13 @@ export default class Input extends Component {
         this.setState(({ focused }) => ({ focused: !focused }));
     }
     changeText=(e)=>{
+        if(e.target.value.length>50){
+            return
+        }
             this.setState({
                 showCross: e.target.value.length> 0 ? true : false,
-                text: e.target.value
+                text: e.target.value,
+                charCount:e.target.value.length
             })
             if(this.props.onChange){
                 this.props.onChange(e.target.value)
@@ -41,7 +46,8 @@ export default class Input extends Component {
         this.setState({
             showCross: false,
             text: '',
-            error: true
+            error: true,
+            charCount:0
         },()=>{
             this.inputRef.current.focus()
         })
@@ -55,16 +61,15 @@ export default class Input extends Component {
             <div 
             className={
                 this.state.error && this.state.focused  ?
-                "inputWrap inputError inputErrorFocused"
+                "inputWrapCC inputError inputWrapFocusedCC"
                 : this.state.focused ? 
-                "inputWrap inputWrapFocused" 
+                "inputWrapCC inputWrapFocusedCC" 
                 : this.state.error ?
-                 "inputWrap inputError"
-                : "inputWrap"
+                 "inputWrapCC inputError"
+                : "inputWrapCC"
             }
             >
-                {/* CHARACTER LIMIT */}
-                <Label text={this.props.label} for="textInput" subText={this.state.error ? "This field is required":""}/>
+                <Label text={this.props.label} for="textInput"/>
                 <input 
                     ref={this.inputRef} 
                     id="textInput"
@@ -79,6 +84,7 @@ export default class Input extends Component {
                 {this.state.showCross ? 
                 <div className="clearButton" onClick={()=>this.clearText()}><img src={Cross} alt=""/></div>
                 : null}
+                <div className='charCount'> {this.state.charCount}/50</div>
             </div>
         )
     }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Radio from '../../components/Radio/Radio';
-
-export default class RadioView extends Component {
+import InputCC from '../../components/InputCC/InputCC';
+import Label from '../../components/Label/Label';
+export default class InputViewCC extends Component {
 
     constructor(props, context) {
         super(props, context);
@@ -20,7 +20,8 @@ export default class RadioView extends Component {
     render() {
         return (
             <div>
-            <Radio error={this.state.error} label="Upload File" placeholder="No file chosen" optionOne="Option One" optionTwo="Option Two"/>
+                <Label text="This must always be on its own line due to its extra height" />
+            <InputCC error={this.state.error} label="Label" placeholder='Text goes here'/>
             </div>
         )
     }

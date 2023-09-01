@@ -1,0 +1,68 @@
+@import '../../css/global.scss';
+
+.filters{
+  
+    .matching{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 30px 0 20px 0;
+        .lhs{
+            display: flex;
+            align-items: center;
+            gap:10px
+        }
+        .label{
+            margin: 0 !important;
+        }
+        .rhs{
+            .button{
+                min-width: 50px !important;
+                padding: 0 !important;
+                margin: 0;
+            }
+        }
+    }
+
+    .currentFilters{
+        margin-top: -3px;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 1fr 160px 60px;
+        animation: fadeIn $speed-quick;
+        .selectWrap{
+            width: auto;
+            margin: 0;
+            height: 80px;
+            margin: 0;
+            line-height: normal;
+        }
+        .selectselectWrap{
+            width: 100%;
+            margin: 0;
+        }
+    }
+    .deleteBtn{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 1px solid $secondary-light-color;
+        margin-left: 20px;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all $speed-normal;
+        svg{
+            transform: rotate(45deg);
+        }
+    }
+    .deleteBtn:hover{
+        background-color: $purple-color;
+        border: 1px solid transparent;
+        svg{
+            fill: white
+        }
+    }
+}

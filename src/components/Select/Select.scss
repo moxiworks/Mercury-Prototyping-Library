@@ -16,7 +16,7 @@
     input{
         width: calc(100% - 70px);
         height: calc(100% - 60px);
-        padding: 40px 50px 20px 20px;
+        padding: 42px 50px 20px 20px;
         outline: 1px solid $secondary-light-color;
         border: none;
         transition: all $speed-quick;
@@ -76,6 +76,7 @@
 }
 .selectWrapFocused:before{
     position: absolute;
+    z-index: 200;
     content: "";
     width: 5px;
     height: 100%;

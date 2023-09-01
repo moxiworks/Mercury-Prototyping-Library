@@ -101,10 +101,7 @@ class Search extends Component {
                 onKeyDown={(e)=>this.checkEnter(e)}
                 />
                 {this.state.showCross ? 
-                <div className="clearButtonsearch" onClick={()=>this.clearText()}><img src={Cross}/></div>
-                : null}
-                {this.state.searching ? 
-                <div className="searchIcon" onClick={()=>this.clearText()}><img src={SearchLoader}/></div>
+                <div className="clearButtonsearch" onClick={()=>this.clearText()}><img src={Cross} alt="Clear Search"/></div>
                 : null}
                 {this.state.showButton ? 
                 <Button text="Search" type={this.state.searching ? "search" : "small"} onClick={()=>this.search()}/>

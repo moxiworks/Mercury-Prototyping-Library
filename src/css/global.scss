@@ -16,6 +16,7 @@ $purple-color: #9C5AF2;
 $purple-dark-color: #653496;
 $purple-light-color:#CE82FF;
 $error-color: #FF4330;
+$orange-default: #FE6300;
 // $light-blue: #76C8FE;
 $light-green: #1FCDAB;
 small{
@@ -58,7 +59,7 @@ h1{
         transform: translateY(-100px);
     }
     100%{
-        transform: translateY(0px);
+        transform: translateY(-20px);
     }
 }
 @keyframes slideUp {

@@ -3,7 +3,7 @@ import { LockKeyOpen } from '@phosphor-icons/react';
 import Input from '../../components/Input/Input';
 import CloseButton from '../../components/CloseButton/CloseButton';
 import ImpersIcon from '../../images/impers-icon.svg'
-import Toggle from '../../components/Toggle/Toggle';
+// import Toggle from '../../components/Toggle/Toggle';
 import Button from '../../components/Button/Button';
 import PersonCard from '../../components/PersonCard/PersonCard';
 import GUser from '../../images/george-user.png'
@@ -104,6 +104,13 @@ class ImpersonView extends Component {
             })
         }
 
+    }
+    stopImp=()=>{
+        this.setState({
+            impersonate: false,
+            changed: true
+        })
+        this.clearCheck()
     }
 
     clearCheck = () => {
@@ -239,21 +246,51 @@ class ImpersonView extends Component {
                         <div className='impModal' ref={this.wrapperRef}>
                             <CloseButton type="internal" onClick={() => this.cancel()} />
                             <div className='titleArea'>
-                                <div className='impIcon'>
-                                    <img src={ImpersIcon} alt="" />
-                                </div>
                                 <div className='centerArea'>
                                     <h1>Select person to impersonate</h1>
                                     <small className='h3'>Perform actions for authorized users</small>
                                 </div>
-                                <div className='rhs'>
-                                    <Toggle text="Impersonate" toggle={this.state.toggle} action={() => this.toggleToggle()} usePro={true} />
+                            </div>
+
+
+                            <div className='peoplBackground'>
+                            <Input label="Find People" placeholder="Search by name or email" onChange={(e) => this.inputChange(e)} onClear={() => this.clearSearch()} />
+
+                            
+                            <div className={this.state.impersonate ? 'impesonateBar impActive' : 'impesonateBar'}>
+                                <div className='avatar'>
+                                {this.state.impersonate ? 
+                                        this.state.currentUser.image ?
+                                        <img src={this.state.currentUser.image} alt="user"/>
+                                        :
+                                        this.state.currentUser.name.split(" ").map((n)=>n[0]).join("")
+                                    :   
+
+                                    <img src={ImpersIcon} alt=""/>
+                                    }  
+                                </div>
+                                <div className='impAbout'>
+                                    <div className="impLabel">
+                                    {this.state.impersonate ? 
+                                        "Currently impersonating:"
+                                    :   " NOT Currently impersonating:"
+                                    }       
+                                    </div>
+                                    <div className='impName'>
+                                    {this.state.impersonate ? 
+                                        this.state.currentUser.name
+                                    :
+                                    "Find someone to impersonate and then press 'Switch'"
+                                    }
+                                    </div>
+                                </div>
+                                <div className='impBtn'>
+                                    {this.state.impersonate &&
+                                        <Button text="Deselect" onClick={()=>this.stopImp()} type="darkPurple"/> 
+                                    }
                                 </div>
                             </div>
 
-                            <Input label="Find People" onChange={(e) => this.inputChange(e)} onClear={() => this.clearSearch()} />
-
-                            {/* MAKE COMP */}
                             <div className='personContent' id="people">
                                 {this.state.tempUsers.map((person, index) => {
                                     return (
@@ -272,11 +309,11 @@ class ImpersonView extends Component {
                                 {this.state.saving ?
                                     <Button text="Switching" type="saving" disabled={!this.state.currentUser.name && this.state.impersonate} onClick={() => this.submit()} />
                                     :
-                                    <Button text="Done" disabled={!this.state.changed || (!this.state.currentUser.name && this.state.impersonate)} onClick={() => this.submit()} />
+                                    <Button text="Switch" disabled={!this.state.changed || (!this.state.currentUser.name && this.state.impersonate)} onClick={() => this.submit()} />
                                 }
                                 </div>
                             </div>
-
+                            </div>
                         </div>
                     </div>
                 }

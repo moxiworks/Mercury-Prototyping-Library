@@ -7,7 +7,8 @@ export default class TextFieldView extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
-            error: false
+            error: false,
+            resize:true
         }
         
     }
@@ -15,14 +16,14 @@ export default class TextFieldView extends Component {
    
     }
     setError=()=>{
-        this.setState(({ error }) => ({ error: !error }));
+        this.setState(({ resize }) => ({ resize: !resize }));
     }
 
     render() {
         return (
             <div>
-            <TextField error={this.state.error}  label="Text Area" placeholder="Placeholder text goes here"/>
-            <Toggle text="Toggle error state" action={()=>this.setError()}/>
+                <Toggle text="Toggle Resize" action={()=>this.setError()}/>
+                <TextField resize={this.state.resize}  label="Text Area" placeholder="Placeholder text goes here"/>
             </div>
         )
     }

@@ -59,7 +59,10 @@ export default class TextField extends Component {
                 placeholder={this.props.placeholder} value={this.state.text} 
                 onFocus={()=>this.focusInput()}
                 onBlur={()=>this.focusInput()} 
-                onChange={(e)=>this.changeText(e)}>
+                onChange={(e)=>this.changeText(e)}
+                style={{resize:this.props.resize ? 'none':'both'}}
+                >
+                    
                 </textarea>
             </div>
         )

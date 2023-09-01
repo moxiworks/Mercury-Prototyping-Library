@@ -15,8 +15,8 @@ class Checkbox extends Component {
     render() { 
         return (  
             <div className='radioListWrap'>
-                <div className='radioWrap'><input type="radio" name="radio" id="option1" defaultChecked={true}/><label htmlFor="option1">Option One</label></div>
-                <div className='radioWrap'><input type="radio" name="radio" id="option2"/><label htmlFor="option2">Option Two</label></div>
+                <div className='radioWrap'><input type="radio" name="radio" id="option1" defaultChecked={true}/><label htmlFor="option1">{this.props.optionOne}</label></div>
+                <div className='radioWrap'><input type="radio" name="radio" id="option2"/><label htmlFor="option2">{this.props.optionTwo}</label></div>
             </div>
         );
     }

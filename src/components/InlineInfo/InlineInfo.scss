@@ -1,0 +1,61 @@
+@import '../../css/global.scss';
+
+.inlineInfoWarning{
+
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    width: 520px;
+    border: 1px solid $orange-default;
+    border-radius: $radius-small;
+    margin-bottom: 20px;
+
+    .lhs{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        background-color: $orange-default;
+    }
+
+    .content{
+        padding: 10px;
+        font-size: 14px;
+        line-height: 23px;
+        color: $secondary-color;
+    }
+
+    .large{
+        padding: 20px;
+    }
+
+}
+
+.inlineInfo{
+
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    width: 520px;
+    border: 1px solid $secondary-medium;
+    border-radius: $radius-small;
+    margin-bottom: 20px;
+
+    .lhs{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        background-color: $secondary-medium;
+    }
+
+    .content{
+        padding: 10px;
+        font-size: 14px;
+        line-height: 23px;
+        color: $secondary-color;
+    }
+
+    .large{
+        padding: 20px;
+    }
+
+}

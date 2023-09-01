@@ -97,7 +97,7 @@ margin-right: 20px;
 .button:hover:enabled{
     filter: brightness(1.4);
 }
-.buttonActive:before{
+.buttonActive:not(.buttonText):before{
     position: absolute;
     content: " ";
     width: 50px;
@@ -110,7 +110,9 @@ margin-right: 20px;
     filter: brightness(0.75);
     outline: 2px solid $primary-color;
 }
-
+.darkpurple{
+    background-color: $purple-dark-color;
+}
 .buttonSaving, .buttonSaving:hover{
     position: relative;
     background-color: $secondary-light-color;

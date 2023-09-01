@@ -29,6 +29,9 @@ import TestimonialsView from './Views/TestimonialsView/TestimonialsView';
 import AnimationView from './Views/AnimationView/AnimationView';
 import ImpersonView from './Views/ImpersonView/ImpersonView';
 import TimelineView from './Views/TimelineView/TimelineView';
+import InputViewCC from './Views/InputViewCC/InputViewCC';
+import FiltersView from './Views/FiltersView/FiltersView';
+import InlineInfoView from './Views/InlineInfoView/InlineInfoView';
 let pageArray = [
   {
     title: 'Colors',
@@ -39,6 +42,12 @@ let pageArray = [
       title: 'Input Text',
       link: 'textinput',
       comp: InputView
+    },
+    {
+      title: 'Input Text Char Count',
+      link: 'textinputcc',
+      comp: InputViewCC,
+      new: false
     },
     {
       title: 'Input Search',
@@ -63,6 +72,7 @@ let pageArray = [
     {
       title: 'Input Textarea',
       link: 'textarea',
+      new: false,
       comp: TextFieldView
     },
     {
@@ -183,8 +193,20 @@ let pageArray = [
     },{
       title: 'Timeline',
       link: 'timeline',
-      new: true,
+      new: false,
       comp: TimelineView
+    },{
+      title: "Filters",
+      link:'filters',
+      comp :FiltersView,
+      new:false
+    },
+    {
+      title: "Inline Info",
+      link:'inlineinfo',
+      comp :InlineInfoView,
+      new:true
+      
     }
   ]
 

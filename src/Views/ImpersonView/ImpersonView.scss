@@ -35,15 +35,15 @@
         filter: brightness(1.35);
     }
 }
-@keyframes slideDown {
-    0%{
-        transform: translateY(-40px);
-    }
-    100%{
-        transform: translateY(-20px);
-    }
+// @keyframes slideDown {
+//     0%{
+//         transform: translateY(-40px);
+//     }
+//     100%{
+//         transform: translateY(-20px);
+//     }
     
-}
+// }
 .impModalBackground{
     position: absolute;
     width: calc(100% + 25px);
@@ -59,12 +59,12 @@
 .impModal{
     position: relative;
     width: 720px;
-    height: 620px;
+    height: 700px;
     padding: 40px;
     margin: 0 20px;
     border: 1px solid $secondary-light-color;
     border-radius: $radius-small;
-    box-shadow: $shadow;
+    box-shadow: $shadow-blur;
     background-color: white;
     animation: slideUpModal $speed-normal $ease-bounce  forwards;
     
@@ -73,8 +73,8 @@
     }
     .titleArea{
         margin-bottom: 20px;
-        display: grid !important;
-        grid-template-columns: 60px 1fr 130px;
+        // display: grid !important;
+        // grid-template-columns: 60px 1fr 130px;
         .impIcon{
             display: flex;
             align-items: center;
@@ -88,7 +88,7 @@
         }
     }
     .personContent{
-        height: 380px;
+        height: 350px;
         margin-top: 20px;
         overflow-y: auto;
     }
@@ -120,5 +120,61 @@
         }
     }
 
+    .impesonateBar{
+        height: 80px;
+        // background-color: $secondary-ultra-light-color;
+        background-color: $purple-color;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: 80px 1fr 170px;
+        padding: 0 20px;
+        align-items: center;
+        // color: $secondary-color;
+        color:white;
+        border-radius: $radius-small;
+        // box-shadow: $shadow;
+        // transition: all $speed-normal;
+        .avatar{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            overflow: hidden;
+            user-select: none;
+        }
+        .impBtn{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            .button{margin: 0 !important;}
+        }
+
+        .impLabel{
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 700;
+
+            margin-bottom: 5px;
+        }
+        .impName{
+            font-size: 14px;
+          
+        }
+        
+    }
+    .impActive{
+        background-color: $purple-color;
+        color: white;
+        .avatar{
+            background-color: $purple-dark-color;
+            color: white;
+        }
+    }
 
 }
+
