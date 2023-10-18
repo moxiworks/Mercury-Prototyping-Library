@@ -15,6 +15,9 @@
         justify-content: center;
         width: 60px;
         background-color: $orange-default;
+        svg{
+            animation: scaleIn $speed-normal $ease-bounce;
+        }
     }
 
     .content{
@@ -45,6 +48,9 @@
         justify-content: center;
         width: 60px;
         background-color: $secondary-medium;
+        svg{
+            animation: scaleIn $speed-normal $ease-bounce;
+        }
     }
 
     .content{

@@ -1,12 +1,12 @@
 @import '../../css/global.scss';
 .userPanel{
-    height: 80px;
+    height: 100px;
     margin-bottom: 5px;
     background-color: $secondary-ultra-light-color;
     border-radius: $radius-small;
     margin-right: 10px;
     display: grid;
-    grid-template-columns: 60px 1fr 60px;
+    grid-template-columns: 60px 1fr 80px 60px;
     gap: 20px;
     padding-left: 10px;
     align-items: center;
@@ -19,13 +19,13 @@
         height: 60px;
         border-radius: 50%;
         overflow: hidden;
+        
     }
     .picHolder{
         width: 60px;
         height: 60px;
-        border-radius: 50%;
         overflow: hidden;
-        background-color: $purple-color;
+        background-color: $secondary-color;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -34,15 +34,33 @@
         font-weight: 700;
         text-transform: uppercase;
     }
-    .userName, .userEmail{
+    .userName, .userEmail, .useroffice{
         color: $secondary-color;
         font-size: 14px;
         font-weight: 700;
     }
-    .userEmail{
+    .userEmail, .useroffice{
         font-weight: 400;
+    }
+    .useroffice{
+        margin-top: 10px;
+    }
+    .role{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $secondary-color;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: white;
+        height: 20px;
     }
 }   
 .userPanelActive{
     border: 1px solid $primary-color;
+}
+.userRadio{
+    height: 20px;
 }

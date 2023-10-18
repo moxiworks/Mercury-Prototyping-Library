@@ -43,7 +43,7 @@
                 z-index: 2;
                 width: 100%;
                 transform: scaleY(0);
-                background-color: $light-blue;
+                background-color: $primary-light;
                 animation: grow $speed-normal $ease-bounce forwards;
                 transform-origin: bottom;
                 border-top-left-radius: $radius-small;

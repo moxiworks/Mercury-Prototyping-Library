@@ -86,7 +86,8 @@ class Filters extends Component {
                    content={this.content()}
                    heading="Filters"
                    subTitle="Find what you are looking for by narrowing your results"
-                   mainButtonText="Done"
+                   mainButtonText="Apply"
+                   cancelButton
                    />
                 </div>
             </div>

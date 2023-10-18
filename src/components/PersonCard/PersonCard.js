@@ -17,9 +17,16 @@ class PersonCard extends Component {
                     <div className='userName'>{this.props.person.name}</div>
                     <div className='userEmail'>{this.props.person.email}</div>
                     {this.props.person.office &&
-                        <div className='userEmail'> {this.props.person.office}</div>
+                        <div className='useroffice'> {this.props.person.office}</div>
                     }
                 </div>
+                {this.props.person.role ? 
+                <div className='role'>
+                    Admin
+                </div>
+                :<div></div>
+                 }
+
                 <div className='userRadio'>
                     <input type='radio' name="rad" checked={this.props.person.checked} onChange={() => this.props.changeRadio()} />
                 </div>

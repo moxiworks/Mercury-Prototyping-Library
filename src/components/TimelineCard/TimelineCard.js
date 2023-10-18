@@ -5,8 +5,13 @@ import './TimelineCard.scss'
 class TimelineCard extends Component {
     constructor(props) {
         super(props);
+        this.comp = React.createRef();
     }
     state = {  }
+
+     check=(e)=>{
+        console.log(this.comp.current.style);
+    }
     render() { 
         return (
             <div 
@@ -22,7 +27,8 @@ class TimelineCard extends Component {
 
                 <div className='timelineInfo'>
                     <div className='timelineDate'>{this.props.date}</div>
-                    <div className='timelineText'>{this.props.text}</div>
+                    <div className='timelineText' ref={this.comp} onMouseEnter={()=>this.check()}>{this.props.text}</div>
+
                     {this.props.status &&
                         <div className='timelineStatus'>
                             {this.props.status==='In Review'?

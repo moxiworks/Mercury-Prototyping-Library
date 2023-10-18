@@ -37,7 +37,7 @@ class ImpersonView extends Component {
                 id: 1,
                 name: 'Elaine Benise',
                 email: 'elaine@seinfeld.com',
-                office: '',
+                office: 'Melbourne Office',
                 image: EUser,
                 checked: false
             },
@@ -46,6 +46,7 @@ class ImpersonView extends Component {
                 name: 'George Costanza',
                 email: 'george@seinfeld.com',
                 image: GUser,
+                role: 'Admin',
                 checked: false
             },
             {
@@ -58,7 +59,9 @@ class ImpersonView extends Component {
                 id: 4,
                 name: 'Kosmo Kramer',
                 email: 'kosmo@seinfeld.com',
+                office: 'Seattle Office',
                 image: KUser,
+                role:'Admin',
                 checked: false
             },
             {
@@ -294,7 +297,13 @@ class ImpersonView extends Component {
                             <div className='personContent' id="people">
                                 {this.state.tempUsers.map((person, index) => {
                                     return (
-                                        <PersonCard reffer={this.state.currentUser.id === person.id && this.checkedRef} key={'person' + index} person={person} setChecked={(id) => this.setChecked(id)} changeRadio={() => this.changeRadio()} impersonate={this.state.impersonate} />
+                                        <PersonCard 
+                                        reffer={this.state.currentUser.id === person.id && this.checkedRef} 
+                                        role={this.state.currentUser.role}
+                                        key={'person' + index} person={person} 
+                                        setChecked={(id) => this.setChecked(id)}
+                                        changeRadio={() => this.changeRadio()} 
+                                        impersonate={this.state.impersonate} />
                                     )
                                 })}
                             </div>

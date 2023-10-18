@@ -2,6 +2,7 @@
 
 .bannerAlert{
     position: absolute;
+    z-index: 9000;
     display: grid;
     grid-template-columns: 50px 1fr;
     align-items: center;
@@ -36,16 +37,23 @@
     margin-left: 10px;
 }
 .bannerContent{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 40px;
+    height: 100%;
+    width: calc(100% - 40px);
     color: white;
     font-size: 14px;
     font-weight: 700;
-    padding: 0 30px 0 20px;
+    padding: 0 0px 0 20px;
+    .bannerText{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     .rhs{
         display: flex;
         align-items: center;
+        justify-content: flex-start;
         font-weight: 500;
         img{
             margin-left: 20px;

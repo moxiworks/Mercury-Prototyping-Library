@@ -22,9 +22,6 @@ class Banner extends Component {
             show: "show",
             timer: 5
         },()=>{
-            setTimeout(() => {
-                this.hide()
-            }, 2000);
         })
     }
 

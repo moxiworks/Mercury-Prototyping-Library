@@ -14,7 +14,7 @@ class InlineInfoView extends Component {
                 <InlineInfo type="warning"/>
 
                 <Label text="Info - Large"/>
-                <InlineInfo type="info" size="large" title="Important"/>
+                <InlineInfo type="info" size="large" title="Important!"/>
                 <Label text="Info - Compact"/>
                 <InlineInfo type="info"/>
             </div>

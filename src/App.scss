@@ -108,6 +108,10 @@ label{
     
   }
 }
+::selection {
+  color: white;
+  background: $primary-color;
+}
 
 @keyframes colorIn {
   0%{
