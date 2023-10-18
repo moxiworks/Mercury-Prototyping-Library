@@ -5,11 +5,9 @@ import { Player } from '@lottiefiles/react-lottie-player';
 import SearchLottie from '../../lottie/search.json'
 import EmailLottie from '../../lottie/email_lock.json'
 import ErrorLottie from '../../lottie/error.json'
+import Email from '../../lottie/email.json'
 class AnimationView extends Component {
-    constructor(props) {
-        super(props);
-    }
-    state = {  }
+
     render() { 
         return ( 
             <div className='mainView'>
@@ -49,6 +47,19 @@ class AnimationView extends Component {
                     </Player>
                     <a href={'/lottie/error.json'} download="error.json"><Button text="Download"/></a>
                 </div>
+
+                <div className='animCard'>
+                    <Player
+                        autoplay
+                        loop
+                        src={Email}
+                        style={{ height: '100px', width: '100px' }}
+                        >
+                    </Player>
+                    <a href={'/lottie/email.json'} download="email.json"><Button text="Download"/></a>
+                </div>
+
+                
                 
 
             </div>
