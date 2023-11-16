@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SearchLoader from '../../images/small-loader.svg'
+import { Check,CircleNotch,Plus } from '@phosphor-icons/react';
 import './Button.scss'
 export default class Button extends Component {
 
@@ -53,11 +53,25 @@ export default class Button extends Component {
             :
             this.props.type==='saving' 
             ?
-            <button onClick={()=>this.clicked()} className={this.state.active ? 'button buttonActive buttonSaving' : 'button buttonSaving'} disabled={this.props.disabled}><img src={SearchLoader} alt=""/>{this.props.text}</button>
+            <button onClick={()=>this.clicked()} className={this.state.active ? 'button buttonActive buttonSaving' : 'button buttonSaving'} disabled={this.props.disabled}>
+               <div className='spinningIcon'> <CircleNotch size={18} weight="bold" /></div>
+                {this.props.text}
+                </button>
             :
             this.props.type==='darkPurple' 
             ?
             <button onClick={()=>this.clicked()} className={'button darkpurple'} >{this.props.text}</button>
+            :
+            this.props.type==='tertiary' 
+            ?
+            <button onClick={()=>this.clicked()} className={'button purple'} >
+               {this.props.icon ? <Plus fill="bold" size={16}/> : ''}
+                {this.props.text}
+                </button>
+            :
+            this.props.type==='saved' 
+            ?
+            <button onClick={()=>this.clicked()} className={'button saved'} disabled={this.props.disabled} ><Check fill="bold" size={16}/>{this.props.text} </button>
             :
             <button onClick={()=>this.clicked()} className={this.state.active ? 'button buttonActive' : 'button buttonMain'} disabled={this.props.disabled}>
                 {this.props.icon &&

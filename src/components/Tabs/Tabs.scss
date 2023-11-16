@@ -1,0 +1,141 @@
+@import '../../css/global.scss';
+
+.tabMain{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 40px;
+    width: 960px;
+    height: 580px;
+    background-color: $secondary-ultra-light-color;
+    border-radius: $radius-small;
+    h1{
+        margin-bottom: 0px;
+    }
+    p{
+        margin: 0;
+        font-size: 14px;
+        color: $secondary-color;
+    }
+}
+.tabInner{
+    display: grid;
+    grid-template-rows: 60px 1fr;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    border-radius: $radius-small;
+    overflow: hidden;
+}
+.headerSection{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    align-items: center;
+    height: 40px;
+ 
+    div{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        height:100%;
+        button{
+            margin: 0;
+        }
+    }
+}
+.tabButtons{
+    position: relative;
+    display: flex;
+    gap: 10px;
+
+    button{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        z-index: 2;
+        min-width: 210px;
+        height: 40px;
+        background-color: $secondary-ultra-light-color;
+        text-transform: uppercase;
+        box-sizing: border-box;
+        padding: 0 10px 0 20px;
+        font-size: 12px;
+        font-weight: 700;
+        color: $secondary-color;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        transition: color $speed-normal;
+        .itemCount{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            color: $secondary-color;
+            height: 20px;
+            width: 30px;
+            border-radius: $radius-small;
+            pointer-events: none;
+        }
+    }
+    // button:hover{
+    //     color: $purple-color;
+    // }
+    .tabActive{
+        color: white;
+        background-color: transparent;
+    }
+    .tabActiveBackground{
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 210px;
+        height: 40px;
+        outline: none;
+        border: none;
+        border-radius: $radius-small;
+        background-color: $secondary-color;
+        transition: all $speed-slow $ease-bounce;
+    }
+}
+.tabContent{
+    .task{
+        display: grid;
+        grid-template-columns: 40px 1fr 60px;
+        box-sizing: border-box;
+        width: 100%;
+        background-color: $secondary-ultra-light-color;
+        border-radius: $radius-small;
+        padding: 20px;
+        font-size: 14px;
+        color: $secondary-color;
+        cursor: pointer;
+        transition: all $speed-normal $ease-bounce;
+        .icon{
+            margin-right: 20px;
+        }
+        .text{
+            font-weight: 600;
+            p{
+                font-weight: 500;
+                margin-top: 5px;
+                margin-bottom: 10px;
+            }
+            .date{
+                font-size: 12px;
+                text-transform: uppercase;
+            }
+        }
+        .complete{
+            text-decoration: line-through;
+        }
+    }
+    .task:hover{
+        box-shadow: $shadow;
+    }
+}

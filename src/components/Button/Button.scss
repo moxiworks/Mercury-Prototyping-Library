@@ -97,7 +97,7 @@ margin-right: 20px;
 .button:hover:enabled{
     filter: brightness(1.4);
 }
-.buttonActive:not(.buttonText):before{
+.buttonActive:not(.buttonText):not(.saved):before{
     position: absolute;
     content: " ";
     width: 50px;
@@ -113,16 +113,53 @@ margin-right: 20px;
 .darkpurple{
     background-color: $purple-dark-color;
 }
+.purple{
+    background-color: $purple-color;
+    svg{
+        position: absolute;
+        left: 15px;
+        fill: white;
+        opacity: 0.5;
+    }
+}
 .buttonSaving, .buttonSaving:hover{
     position: relative;
     background-color: $secondary-light-color;
     color: $secondary-color;
     filter: none !important;
-    img{
+
+    .spinningIcon{
         position: absolute;
         left: 10px;
-        animation: spinner $speed-quick linear infinite;
+        padding: 0;
+        margin: 0;
+        width: 18px;
+        height: 18px;
+        animation: spinner 0.4s linear infinite;
     }
+
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) { _::-webkit-full-page-media, _:future, :root , .spinningIcon { 
+   width: 17px !important;
+   height: 18px;
+} }
+
+
+.saved,.saved:hover{
+    background-color: $success-green;
+    color:#003b49;
+    filter: none !important;
+    svg{
+        position: absolute;
+        left: 15px;
+       
+        animation: scaleIn $speed-slow $ease-bounce;
+    }
+}
+.saved:disabled{
+    background-color: #00bfb2;
+    color:#003b49;
 }
 
 @keyframes scaleOut {

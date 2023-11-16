@@ -1,0 +1,24 @@
+
+@import '../../css/global.scss';
+.saveButtonMain{
+    height: 40px;
+    overflow: hidden;
+}
+.saveButtonWrapper{
+    // transform: translateY(0);
+}
+
+.moveUpOne{
+    animation: moverUpper $speed-slow $ease-bounce forwards;
+}
+
+
+@keyframes moverUpper {
+    0%{
+        transform: translateY(0) scale(0.9);
+    }
+    100%{
+        transform: translateY(-50px) scale(1);
+    }
+}
+

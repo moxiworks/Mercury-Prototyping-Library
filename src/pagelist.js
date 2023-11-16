@@ -32,6 +32,9 @@ import TimelineView from './Views/TimelineView/TimelineView';
 import InputViewCC from './Views/InputViewCC/InputViewCC';
 import FiltersView from './Views/FiltersView/FiltersView';
 import InlineInfoView from './Views/InlineInfoView/InlineInfoView';
+import TabsView from './Views/TabsView/TabsView';
+import DataCardView from './Views/DataCardView/DataCardView';
+
 let pageArray = [
   {
     title: 'Colors',
@@ -205,8 +208,20 @@ let pageArray = [
       title: "Inline Info",
       link:'inlineinfo',
       comp :InlineInfoView,
-      new:true
+      new:false
       
+    },
+    {
+      title: "Tabs",
+      link:'tabs',
+      comp :TabsView,
+      new:true
+    },
+    {
+      title: "Data Cards",
+      link:'datacards',
+      comp :DataCardView,
+      new:true
     }
   ]
 
