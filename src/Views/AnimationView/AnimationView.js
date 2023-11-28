@@ -6,13 +6,14 @@ import SearchLottie from '../../lottie/search.json'
 import EmailLottie from '../../lottie/email_lock.json'
 import ErrorLottie from '../../lottie/error.json'
 import Email from '../../lottie/email.json'
+import Success from '../../lottie/success.json'
 class AnimationView extends Component {
 
     render() { 
         return ( 
             <div className='mainView'>
-                 <h1>Lottie Files</h1>
-                <small className='h3'>Click 'Download' to download a .json lottie file</small>
+                 {/* <h1>Lottie Files</h1>
+                <small className='h3'>Click 'Download' to download a .json lottie file</small> */}
             <div className='animView'>
                
                 <div className='animCard'>
@@ -59,6 +60,16 @@ class AnimationView extends Component {
                     <a href={'/lottie/email.json'} download="email.json"><Button text="Download"/></a>
                 </div>
 
+                <div className='animCard'>
+                    <Player
+                        autoplay
+                        loop
+                        src={Success}
+                        style={{ height: '100px', width: '100px' }}
+                        >
+                    </Player>
+                    <a href={'/lottie/success.json'} download="success.json"><Button text="Download"/></a>
+                </div>
                 
                 
 

@@ -1,12 +1,17 @@
 @import '../../css/global.scss';
 .mainView{
-  
+    width: 100%;
+
 }
 .animView{
     display: flex;
-    width: 100%;
+    gap: 10px;
+    align-items: center;
     justify-content: center;
-    gap: 20px;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px;
+    flex-wrap: wrap;
     margin-top: 40px;
 
     .animCard{
