@@ -47,8 +47,10 @@ class OvalGraph extends Component {
     render() { 
         return (
         <div className='mainView'>
+            <div className='title'>
             <h1>Goal Completion</h1>
             <small className='h3'>January 2022 - December 2022</small>
+            </div>
             <div className='ovalSideBySide'>
 
             <div className='ovalGraph'>

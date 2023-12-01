@@ -83,15 +83,16 @@ class ImageUpload extends Component {
 
     render() { 
         return (
+    
             <div className={this.state.dragOver ? 'imageUploadOver imageUpload' : 'imageUpload'} 
                 onDragEnter={()=>this.dragOver()} 
                 onDragLeave={()=>this.dragExit()}
             >
                 <div className='uploadContent'>
-                    <div className='iconArea'>
+                    <div className='ulIconArea'>
                         <img src={ImageIcon} alt="Upload"/>
                     </div>
-                    <div className='title'>{this.state.title}</div>
+                    <div className='ulTitle'>{this.state.title}</div>
                     <div className='subtext'>{this.state.subtext}</div>
                 </div>
 

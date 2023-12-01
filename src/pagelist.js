@@ -34,6 +34,7 @@ import FiltersView from './Views/FiltersView/FiltersView';
 import InlineInfoView from './Views/InlineInfoView/InlineInfoView';
 import TabsView from './Views/TabsView/TabsView';
 import DataCardView from './Views/DataCardView/DataCardView';
+import PieChartView from './Views/PieChartView/PieChartView';
 
 let pageArray = [
   {
@@ -221,6 +222,12 @@ let pageArray = [
       title: "Data Cards",
       link:'datacards',
       comp :DataCardView,
+      new:true
+    },
+    {
+      title: "Graph Pie",
+      link:'piegraph',
+      comp :PieChartView,
       new:true
     }
   ]
