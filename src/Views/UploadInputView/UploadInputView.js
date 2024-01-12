@@ -22,7 +22,7 @@ export default class UploadInputView extends Component {
         return (
             <div>
             <UploadInput error={this.state.error} label="Upload File" placeholder="No file chosen"/>
-            <Toggle text="Toggle error state" action={()=>this.setError()}/>
+            {/* <Toggle text="Toggle error state" action={()=>this.setError()}/> */}
             </div>
         )
     }

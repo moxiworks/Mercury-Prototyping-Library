@@ -12,3 +12,36 @@
         color: $secondary-color;
     }
 }
+.graphArea{
+    position: relative;
+    width: 500px;
+    // height: 00px;
+    // background-color: #F3F5F6;
+    canvas{
+        width: 100%;
+    }
+}
+// .backDrop{
+//     position: absolute;
+//     z-index: -1;
+//     top: 0;
+//     left: 72px;
+//     width: calc(100% - 80px);
+//     height: calc(100% - 30px);
+//     display: flex;
+//     justify-content: space-between;
+//     // gap: 13px;
+//     .bar{
+//         width: 20px;
+//         height: 100%;
+//         background-color: #F3F5F6;
+//     }
+// }
+
+.titleArea{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 500px;
+    margin-bottom: 40px;
+}

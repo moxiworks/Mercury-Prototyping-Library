@@ -21,7 +21,10 @@ export default class InputView extends Component {
     render() {
         return (
             <div>
-            <Input error={this.state.error} label="Label" placeholder='Text goes here'/>
+            <Input label="First Name" placeholder='Text goes here'/>
+            <Input error={this.state.error} label="Last Name" placeholder='Text goes here' info="Google or Microsoft only"/>
+            <Input  label="Email" placeholder='Text goes here' info="Google or Microsoft only"/>
+            <Input  label="Password" type="password" placeholder='Text goes here'/>
             <Toggle text="Toggle error state" action={()=>this.setError()}/>
             </div>
         )

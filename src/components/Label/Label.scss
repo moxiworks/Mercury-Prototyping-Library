@@ -8,12 +8,13 @@
    cursor: default;
    label{
     font-size: 12px !important;
-    .subText{
-        font-weight: normal;
-        text-transform: none;
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    svg{
         margin-left: 5px;
-        animation: scaleIn 2$speed-normal forwards;
-        color: $error-color;
+        margin-top: -2px;
+        cursor: pointer;
     }
     
    }

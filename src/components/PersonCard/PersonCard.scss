@@ -58,6 +58,12 @@
         height: 20px;
     }
 }   
+
+.userPanel:not(.userPanelActive):hover{
+    border: 1px dashed $secondary-medium;
+    
+    // background-color: $secondary-light-color;
+}
 .userPanelActive{
     border: 1px solid $primary-color;
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Label from '../Label/Label';
 import Cross  from '../../images/cross.svg'
+
 import './Input.scss'
 export default class Input extends Component {
 
@@ -59,15 +60,17 @@ export default class Input extends Component {
                 : this.state.focused ? 
                 "inputWrap inputWrapFocused" 
                 : this.state.error ?
-                 "inputWrap inputError"
-                : "inputWrap"
+                 "inputWrap inputError" 
+                : "inputWrap" 
             }
+            data-info={this.props.info && this.props.info}
+            data-error={this.state.error && "This field is required. Click help ( ? ) for more."}
             >
-                {/* CHARACTER LIMIT */}
-                <Label text={this.props.label} for="textInput" subText={this.state.error ? "This field is required":""}/>
+        
+                <Label text={this.props.label} info={this.props.info}/>
                 <input 
                     ref={this.inputRef} 
-                    id="textInput"
+
                     placeholder={this.props.placeholder} value={this.state.text} 
                     onFocus={()=>this.focusInput()}
                     onBlur={()=>this.focusInput()} 
@@ -75,6 +78,7 @@ export default class Input extends Component {
                     autoFocus={this.props.focus}
                     type={this.props.type? this.props.type : 'text'}
                     max={this.props.max?this.props.max:800000000}
+                    
                 />
                 {this.state.showCross ? 
                 <div className="clearButton" onClick={()=>this.clearText()}><img src={Cross} alt=""/></div>

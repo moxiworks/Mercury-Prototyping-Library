@@ -28,7 +28,7 @@
     }
 }
 .button:disabled{
-    background-color: $secondary-light-color;
+    background-color: $secondary-ultra-light-color;
     color: $secondary-color;
 }
 
@@ -124,7 +124,7 @@ margin-right: 20px;
 }
 .buttonSaving, .buttonSaving:hover{
     position: relative;
-    background-color: $secondary-light-color;
+    background-color: $secondary-ultra-light-color;
     color: $secondary-color;
     filter: none !important;
 

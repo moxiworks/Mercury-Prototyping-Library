@@ -93,23 +93,23 @@
     // margin-left: -2px;
     // background-color: $primary-color;
 }
-.inputError{
-    input{
-        border: 1px solid $error-color !important;
-        outline: none;
-    }
-    label{
-        color: $error-color;
-    }
-}
-.inputErrorFocused:before{
-    position: absolute;
-    content: "";
-    width: 7px;
-    height: calc(100% + 2px);
-    background-color: $error-color;
-    animation: slideIn $speed-quick $ease-bounce forwards;
-}
+// .inputError{
+//     input{
+//         border: 1px solid $error-color !important;
+//         outline: none;
+//     }
+//     label{
+//         color: $error-color;
+//     }
+// }
+// .inputErrorFocused:before{
+//     position: absolute;
+//     content: "";
+//     width: 7px;
+//     height: calc(100% + 2px);
+//     background-color: $error-color;
+//     animation: slideIn $speed-quick $ease-bounce forwards;
+// }
 
 @keyframes slideIn {
     0%{

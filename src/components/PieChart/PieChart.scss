@@ -1,21 +1,10 @@
 @import '../../css/global.scss';
 .sideBySide{
     display: flex;
-    gap: 40px;
+    gap: 0px;
     align-items: center;
 }
-.keys{
-    .keyItem{
 
-    }
-}
-.myPie{
-    width: 200px;
-    height: 200px;
-    background: conic-gradient($primary-light 45deg, $purple-color 45deg 90deg, $orange-hover 90deg 225deg, $success-green 225deg );
-    border-radius: 50%;
-    animation: pieTest 5s;
-}
 .pieKey{
     display: flex;
     align-items: center;
@@ -26,6 +15,10 @@
     font-weight: 600;
     opacity: 0;
     animation: fadeIn $speed-normal forwards;
+    cursor: pointer;
+}
+.pieKey:hover{
+    color: $primary-color;
 }
 
 .keyLed{
@@ -33,4 +26,12 @@
     height: 12px;
     border-radius: 50%;
 
+}
+.container{
+   margin-left: -40px;
+    canvas{
+        width: 300px;
+        height: 300px;
+        overflow: visible;
+    }
 }

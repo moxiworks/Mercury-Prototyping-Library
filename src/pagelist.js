@@ -35,6 +35,7 @@ import InlineInfoView from './Views/InlineInfoView/InlineInfoView';
 import TabsView from './Views/TabsView/TabsView';
 import DataCardView from './Views/DataCardView/DataCardView';
 import PieChartView from './Views/PieChartView/PieChartView';
+import GraphLine from './Views/GraphLine/GraphLine';
 
 let pageArray = [
   {
@@ -228,6 +229,12 @@ let pageArray = [
       title: "Graph Pie",
       link:'piegraph',
       comp :PieChartView,
+      new:true
+    },
+    {
+      title: "Graph Line",
+      link:'linegraph',
+      comp :GraphLine,
       new:true
     }
   ]

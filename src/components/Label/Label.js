@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Label.scss'
+import { Question } from '@phosphor-icons/react';
 export default class Label extends Component {
 
     constructor(props, context) {
@@ -16,10 +17,10 @@ export default class Label extends Component {
     render() {
         return (
             <div className='label'>
-                <label htmlFor={this.props.for}>{this.props.text} 
-                    <span className='subText'>{this.props.subText}</span>
+                <label htmlFor={this.props.for}>
+                    {this.props.text} 
+                       {this.props.info && <Question size={18} color="#455E78" weight="fill" />}
                 </label>
-                
             </div>
         )
     }
